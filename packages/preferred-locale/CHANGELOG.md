@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/wopian/preferred-locale/compare/v0.1.0...v1.0.0) (2020-07-13)
+
+
+### Chores
+
+* **release:** update documentation ([34f813b](https://github.com/wopian/preferred-locale/commit/34f813b))
+* **release:** update documentation ([89760fb](https://github.com/wopian/preferred-locale/commit/89760fb))
+
+
+### Continuous Integration
+
+* update workflow configs ([b8cef20](https://github.com/wopian/preferred-locale/commit/b8cef20))
+
+
+### Tests
+
+* add Intl.Locale fallback tests ([9e1fa33](https://github.com/wopian/preferred-locale/commit/9e1fa33))
+
+
+
+
+
 # [0.1.0](https://github.com/wopian/preferred-locale/compare/v0.0.1-prerelease...v0.1.0) (2020-07-13)
 
 
