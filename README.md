@@ -17,7 +17,7 @@ This is a monorepo containing the following packages:
 ## Features
 
 - Uses the Intl.Locale API (backwards compatible)
-- Works on Node & Browsers
+- Works on node & browsers
 - Zero dependencies
 
 ## Guaranteed Node / Browser Support

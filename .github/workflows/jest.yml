@@ -5,9 +5,9 @@ jobs:
     name: Jest Coverage
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - run: yarn
-    - uses: mattallty/jest-github-action@v1
+    - uses: mattallty/jest-github-action@v1.0.3
       continue-on-error: true
       with:
         changes-only: true
