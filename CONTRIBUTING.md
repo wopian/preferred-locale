@@ -38,7 +38,7 @@ feat: added feature x
 
     ```bash
     git clone https://github.com/your-username/preferred-locale.git
-    cd kitsu
+    cd preferred-locale
     ```
 
 1. Create a feature branch:

@@ -1,4 +1,4 @@
-import preferredLocale from 'preferred-locale';
+import preferredLocale from 'preferred-locale'
 
 describe('preferredLocale', () => {
   it('is not implemented', () => {

@@ -1,0 +1,14 @@
+dictionaries:
+  - en
+  - en_GB
+
+excluded_files:
+  - './github/**/*'
+  - 'node_modules/**/*'
+  - 'packages/preferred-locale/.npmignore'
+  - 'yarn.lock'
+  - '.typo-ci.yml'
+
+excluded_words:
+  - 'esm'
+  - 'cjs'
