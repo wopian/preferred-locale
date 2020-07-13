@@ -74,10 +74,10 @@ npm install preferred-locale
 import preferredLocale from 'preferred-locale'      // ES Modules and Babel
 const preferredLocale = require('preferred-locale') // CommonJS and Browserify
 
-const translatedLocales = [ 'en-US', 'en-GB', 'fr-FR' ]
-const fallback = 'en-US'
-preferredLocale(translatedLocales, fallback)
-// Returns 'en-GB' if browser/node user language is [ 'en-GB', 'fr-FR' ]
+const translatedLocales = [ 'en-us', 'en-gb', 'fr-fr' ]
+const fallback = 'en-us'
+preferredLocale(translatedLocales, fallback, { lowerCaseRegion: true })
+// Returns 'en-gb' if browser/node user language is [ 'en-gb', 'nl-nl' ]
 ```
 
 ### CDNs
@@ -108,7 +108,7 @@ preferredLocale(translatedLocales, fallback)
 
 ### preferredLocale
 
-[packages/preferred-locale/src/index.js:14-22](https://github.com/wopian/preferred-locale/blob/a5bf73839f62158afd93e2c7d585f5d0061932f3/packages/preferred-locale/src/index.js#L14-L22 "Source code on GitHub")
+[packages/preferred-locale/src/index.js:14-22](https://github.com/wopian/preferred-locale/blob/b8cef20e69a5ea439983def59b1e8202b5da9283/packages/preferred-locale/src/index.js#L14-L22 "Source code on GitHub")
 
 Get the users' most preferred locale that is translated by your application.
 
