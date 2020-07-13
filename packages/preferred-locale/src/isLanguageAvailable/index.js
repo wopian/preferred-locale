@@ -5,6 +5,7 @@
  * @param {number} index The index of the unified browser locale in `array`
  * @param {Array[Object]} array The unified browser locale array
  * @returns {boolean} Is the language available?
+ * @private
  */
 export default (
   userLocale,

@@ -6,7 +6,7 @@
  * @name isLocaleSupported
  * @param {string} [fallback='en-US'] Base language of the application
  * @returns {boolean} Is Intl.Locale supported?
- *
+ * @private
  * @example
  * isLocaleSupported('en-us') // true or false
  */

@@ -2,6 +2,7 @@
  * @name deduplicate
  * @param {Array[string]|Array[Object]} array An array of locales to deduplicate
  * @returns {Array[string]|Array[Object]} Deduplicated array of locales
+ * @private
  * @example <caption>Deduplicate a string array</caption>
  * deduplicate([ 'en-US', 'en-US']) // [ 'en-GB, 'en-US' ]
  * @example <caption>Deduplicate an object array</caption>

@@ -7,6 +7,7 @@ import deduplicate from '../deduplicate'
  * @param {boolean} [options.regionLowerCase=false] If true, returns `en-us` instead of `en-US`
  * @param {boolean} [options.languageOnly=false] If true, returns `en` instead of `en-US` or `en-us`
  * @returns {Array[Object]} Unified browser locales
+ * @private
  * @example <caption>Unify locales</caption>
  * unifyUserLocales(['en-GB', 'en', 'en-US'])
  * // [ { locale: 'en-GB', priority: 0 }, { locale: 'en-US', priority: 1 } ]

@@ -19,10 +19,4 @@ describe('isLocaleSupported', () => {
     expect.assertions(1)
     expect(isLocaleSupported()).toBe(true)
   })
-
-  // TODO: Mock Intl.Locale.prototype for iOS/macOS 14 Dev 1 & 2 bugs
-  it.skip('returns false if Intl.Locale is not spec compliant', () => {
-    expect.assertions(1)
-    expect(isLocaleSupported()).toBe(false)
-  })
 })

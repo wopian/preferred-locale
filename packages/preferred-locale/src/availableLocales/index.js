@@ -7,6 +7,7 @@ import isLanguageAvailable from '../isLanguageAvailable'
  * @param {Object} [options={}] Configuration options
  * @param {boolean} [options.regionLowerCase=false] If true, returns `en-us` instead of `en-US`
  * @returns {Array[Object]} Locales supported by both the browser and application
+ * @private
  */
 export default (
   userLocales,
