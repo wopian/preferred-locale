@@ -1,0 +1,21 @@
+{
+  "version": "0.0.1",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "command": {
+    "publish": {
+      "allowBranch": [
+        "master"
+      ],
+      "conventionalCommits": true,
+      "changelogPreset": "angular-all-2",
+      "message": "chore(release): publish packages",
+      "npmClient": "yarn"
+    }
+  },
+  "ignoreChanges": [
+    "**/*.spec.js",
+    "**/*.tgz",
+    "**/^(?!README).md"
+  ]
+}

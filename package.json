@@ -1,28 +1,78 @@
 {
-  "name": "preferred-locale",
-  "version": "0.0.1-prerelease",
+  "private": true,
   "description": "Get a users' preferred locale/language from your app's available translations",
-  "main": "index.js",
   "repository": "https://github.com/wopian/preferred-locale",
+  "homepage": "https://github.com/wopian/preferred-locale#readme",
+  "bugs": {
+    "url": "https://github.com/wopian/preferred-locale/issues"
+  },
   "author": "James Harris <wopian@wopian.me>",
   "license": "MIT",
-  "private": false,
+  "engines": {
+    "node": ">= 10"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "diff": "lerna diff",
+    "updated": "lerna updated -l --sort",
+    "updated:json": "yarn updated --json",
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna exec yarn build",
+    "docs": "lerna exec --parallel yarn docs:lint",
+    "docs:build": "lerna exec --parallel yarn docs:build",
+    "docs:typescript": "lerna exec --parallel yarn docs:typescript",
+    "docs:release": "yarn docs && yarn docs:build && yarn docs:typescript",
+    "fix": "eslint . --fix",
+    "lint": "eslint .",
+    "test": "yarn test:coverage && yarn lint && yarn docs && yarn build && yarn size",
+    "test:coverage": "jest --coverage",
+    "release": "yarn updated && yarn release:test && yarn release:commit && yarn release:lerna",
+    "release:test": "jest && yarn lint && yarn docs:release && yarn build",
+    "release:commit": "git commit -am \"chore(release): update documentation\"",
+    "release:lerna": "lerna publish",
+    "browserlist": "npx browserslist \"last 2 years, not < 0.05%\"",
+    "size": "lerna exec size-limit"
+  },
   "devDependencies": {
     "@babel/cli": "~7.10.4",
     "@babel/core": "~7.10.4",
     "@babel/preset-env": "~7.10.4",
     "@rollup/plugin-babel": "~5.1.0",
-    "@size-limit/preset-small-lib": "~4.5.4",
     "babel-jest": "~26.1.0",
     "conventional-changelog-angular-all-2": "~5.0.3",
+    "cross-env": "~7.0.2",
     "documentation": "~13.0.2",
     "eslint": "~7.4.0",
     "eslint-config-wopian": "~2.0.1",
     "jest": "~26.1.0",
+    "lerna": "~3.22.1",
     "rollup": "~2.21.0",
     "rollup-plugin-delete": "~2.0.0",
+    "rollup-plugin-local-resolve": "~1.0.7",
     "rollup-plugin-terser": "~6.1.0",
     "size-limit": "~4.5.4",
     "typescript": "~3.9.6"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "**/src/**/*.js"
+    ],
+    "coverageDirectory": "<rootDir>/coverage",
+    "moduleNameMapper": {
+      "^preferred-locale(.*)$": "<rootDir>/packages/preferred-locale/src/$1",
+      "^pkg$": "<rootDir>/package.json"
+    },
+    "transform": {
+      "^.+\\.js$": "<rootDir>/config/jest.transform.js"
+    }
+  },
+  "renovate": {
+    "extends": [
+      "@wopian",
+      ":pathSemanticCommitType(packages/preferred-locale/**,build(preferred-locale))"
+    ]
   }
 }

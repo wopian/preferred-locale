@@ -1,0 +1,71 @@
+{
+  "name": "preferred-locale",
+  "version": "0.0.1-prerelease",
+  "description": "Get a users' preferred locale/language from your app's available translations",
+  "main": "lib/index",
+  "module": "lib/index",
+  "unpkg": "lib/index.browser.js",
+  "jsdelivr": "lib/index.browser.js",
+  "types": "types/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.js"
+    },
+    "./lib": {
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.js"
+    },
+    "./lib/index": {
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.js"
+    },
+    "./lib/index.js": {
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.js"
+    },
+    "./lib/index.mjs": {
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.js"
+    }
+  },
+  "repository": "https://github.com/wopian/preferred-locale",
+  "homepage": "https://github.com/wopian/preferred-locale#readme",
+  "bugs": {
+    "url": "https://github.com/wopian/preferred-locale/issues"
+  },
+  "sideEffects": false,
+  "author": "James Harris <wopian@wopian.me>",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  },
+  "scripts": {
+    "docs:lint": "documentation lint src/index.js",
+    "docs:build": "documentation readme src/index.js --section=API -g true --sort-order source",
+    "docs:typescript": "tsc src/index.js --declaration --emitDeclarationOnly --allowJs --outDir types",
+    "rollup": "cross-env NODE_ENV=production rollup -c --environment BUILD:production",
+    "build": "yarn rollup"
+  },
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "~4.5.4"
+  },
+  "size-limit": [
+    {
+      "path": "./lib/index.js",
+      "limit": "2 kb",
+      "brotli": true
+    },
+    {
+      "path": "./lib/index.mjs",
+      "limit": "2 kb",
+      "brotli": true
+    },
+    {
+      "path": "./lib/index.browser.js",
+      "limit": "2 kb",
+      "brotli": true
+    }
+  ]
+}

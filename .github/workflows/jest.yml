@@ -1,0 +1,16 @@
+name: CI
+on: [ push, pull_request ]
+jobs:
+  jest:
+    name: Jest Coverage
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - run: yarn
+    - uses: mattallty/jest-github-action@v1
+      continue-on-error: true
+      with:
+        changes-only: true
+        test-command: 'yarn test:coverage'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
