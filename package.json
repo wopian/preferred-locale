@@ -56,18 +56,44 @@
     "typescript": "~3.9.6"
   },
   "jest": {
-    "testEnvironment": "node",
-    "collectCoverageFrom": [
-      "**/src/**/*.js"
-    ],
-    "coverageDirectory": "<rootDir>/coverage",
-    "moduleNameMapper": {
-      "^preferred-locale(.*)$": "<rootDir>/packages/preferred-locale/src/$1",
-      "^pkg$": "<rootDir>/package.json"
-    },
-    "transform": {
-      "^.+\\.js$": "<rootDir>/config/jest.transform.js"
-    }
+    "projects": [
+      {
+        "displayName": "browser",
+        "testEnvironment": "jsdom",
+        "collectCoverageFrom": [
+          "**/src/**/*.js"
+        ],
+        "coverageDirectory": "<rootDir>/coverage",
+        "transform": {
+          "^.+\\.js$": "<rootDir>/config/jest.transform.js"
+        },
+        "testMatch": [
+          "**/*.spec.js?(x)",
+          "**/*.spec.browser.js?(x)"
+        ],
+        "setupFilesAfterEnv": [
+          "<rootDir>/config/setupTests.browser.js"
+        ]
+      },
+      {
+        "displayName": "node",
+        "testEnvironment": "node",
+        "collectCoverageFrom": [
+          "**/src/**/*.js"
+        ],
+        "coverageDirectory": "<rootDir>/coverage",
+        "transform": {
+          "^.+\\.js$": "<rootDir>/config/jest.transform.js"
+        },
+        "testMatch": [
+          "**/*.spec.js?(x)",
+          "**/*.spec.node.js?(x)"
+        ],
+        "setupFilesAfterEnv": [
+          "<rootDir>/config/setupTests.node.js"
+        ]
+      }
+    ]
   },
   "renovate": {
     "extends": [
