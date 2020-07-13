@@ -1,6 +1,7 @@
 <h1 align=center>Preferred Locale</h1>
 
 <p align=center>
+  <a href="https://david-dm.org/wopian/preferred-locale?path=packages/preferred-locale"><img alt=deps src="https://flat.badgen.net/david/dep/wopian/preferred-locale/packages/preferred-locale"></a>
   <a href="https://david-dm.org/wopian/preferred-locale?type=dev"><img alt=devDeps src=https://flat.badgen.net/david/dev/wopian/preferred-locale></a>
   <a href=https://github.com/wopian/preferred-locale/graphs/contributors><img alt=contributors src=https://flat.badgen.net/github/contributors/wopian/preferred-locale></a>
 </p>
