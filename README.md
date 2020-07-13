@@ -1,22 +1,46 @@
-# preferred-locale
+<h1 align=center>Preferred Locale</h1>
 
-🎌 Get a users' preferred locale/language from your app's available translations
+<p align=center>
+  <a href="https://david-dm.org/wopian/preferred-locale?type=dev"><img alt=devDeps src=https://flat.badgen.net/david/dev/wopian/preferred-locale></a>
+  <a href=https://github.com/wopian/preferred-locale/graphs/contributors><img alt=contributors src=https://flat.badgen.net/github/contributors/wopian/preferred-locale></a>
+</p>
 
-This is a proof-of-concept pre-release.
-This was previously a bespoke function for an app currently being rewritten to be a reuseable NPM component for any application.
+<p align=center>🎌 Get a users' preferred locale/language from your app's available translations with zero dependencies</p>
 
-## Implementation Status
+#
 
-- [ ] Functions implemented
-  - [x] Accurate triangulation for modern browsers (see demo below)
-  - [ ] Fallback triangulation for older browsers
-- [ ] Functions tested
-- [ ] Publicly released
+This is a monorepo containing the following packages:
 
-## Usage
+- [preferred-locale]
 
-TODO. Live demo of the implemention is available at https://eehz9.csb.app/.
+## Features
+
+- Uses the Intl.Locale API (backwards compatible)
+- Works on Node & Browsers
+- Zero dependencies
+
+## Guaranteed Node / Browser Support
+
+| Package            | Package<br>Size | Node | Chrome | Firefox | Safari | Edge |
+| -----------------: | :-------------: | :--: | :----: | :-----: | :----: | :--: |
+| `preferred-locale` | ≤ 551 bytes     | 10+  | 69+    | 68+     | 12+    | 18+  |
 
 ## Contributing
 
-TODO
+See [CONTRIBUTING]
+
+## Releases
+
+See [Github Releases]
+
+## License
+
+All code released under [MIT]
+
+[preferred-locale]:https://github.com/wopian/preferred-locale/tree/master/packages/preferred-locale
+
+[github releases]: https://github.com/wopian/preferred-locale/releases
+
+[contributing]: https://github.com/wopian/preferred-locale/blob/master/CONTRIBUTING.md
+
+[mit]: https://github.com/wopian/preferred-locale/blob/master/LICENSE.md

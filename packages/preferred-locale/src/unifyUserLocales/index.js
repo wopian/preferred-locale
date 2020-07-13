@@ -2,11 +2,11 @@ import deduplicate from '../deduplicate'
 
 /**
  * @name unifyUserLocales
- * @param {Array[string]} userLocales Locales provided by the browser or system
+ * @param {string[]} userLocales Locales provided by the browser or system
  * @param {Object} [options={}] Configuration options
  * @param {boolean} [options.regionLowerCase=false] If true, returns `en-us` instead of `en-US`
  * @param {boolean} [options.languageOnly=false] If true, returns `en` instead of `en-US` or `en-us`
- * @returns {Array[Object]} Unified browser locales
+ * @returns {Object[]} Unified browser locales
  * @private
  * @example <caption>Unify locales</caption>
  * unifyUserLocales(['en-GB', 'en', 'en-US'])

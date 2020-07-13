@@ -4,7 +4,7 @@ import userLocales from './userLocales'
 
 /**
  * @name preferredLocale
- * @param {Array[string]} translatedLocales Translations provided by the application
+ * @param {string[]} translatedLocales Translations provided by the application
  * @param {string} fallback Source locale of the application. Used when no browser locale matches translatedLocales
  * @param {Object} [options={}] Configuration options
  * @param {boolean} [options.regionLowerCase=false] If true, returns `en-us` instead of `en-US`

@@ -2,11 +2,11 @@ import isLanguageAvailable from '../isLanguageAvailable'
 
 /**
  * @name availableLocales
- * @param {Array[Object]} userLocales Unified browser locales
- * @param {Array[string]} translatedLocales Translations provided by the application
+ * @param {Object[]} userLocales Unified browser locales
+ * @param {string[]} translatedLocales Translations provided by the application
  * @param {Object} [options={}] Configuration options
  * @param {boolean} [options.regionLowerCase=false] If true, returns `en-us` instead of `en-US`
- * @returns {Array[Object]} Locales supported by both the browser and application
+ * @returns {Object[]} Locales supported by both the browser and application
  * @private
  */
 export default (

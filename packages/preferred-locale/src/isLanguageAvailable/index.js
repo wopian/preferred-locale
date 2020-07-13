@@ -1,9 +1,9 @@
 /**
  * @name isLanguageAvailable
  * @param {string} userLocale Unified browser locale being tested for availability
- * @param {Array[string]} translatedLocales Translations provided by the application
+ * @param {string[]} translatedLocales Translations provided by the application
  * @param {number} index The index of the unified browser locale in `array`
- * @param {Array[Object]} array The unified browser locale array
+ * @param {Object[]} array The unified browser locale array
  * @returns {boolean} Is the language available?
  * @private
  */
