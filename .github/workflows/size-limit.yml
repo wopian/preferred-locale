@@ -9,9 +9,9 @@ jobs:
         node_version: [ 10, 12, 14 ]
         os: [ ubuntu-latest, windows-latest, macos-latest ]
     steps:
-    - uses: actions/checkout@1
+    - uses: actions/checkout@v1
     - name: Use node ${{ matrix.node_version }}
-      uses: actions/setup-node@1
+      uses: actions/setup-node@v1
       with:
         version: ${{ matrix.node_version }}
     - name: yarn install
