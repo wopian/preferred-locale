@@ -1,5 +1,5 @@
-name: CI
-on: [ push, pull_request ]
+name: Jest Tests
+on: [push, pull_request]
 jobs:
   jest:
     name: Jest Coverage
