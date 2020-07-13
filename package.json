@@ -1,0 +1,10 @@
+{
+  "name": "preferred-locale",
+  "version": "0.0.1-prerelease",
+  "description": "Get a users' preferred locale/language from your app's available translations",
+  "main": "index.js",
+  "repository": "https://github.com/wopian/preferred-locale",
+  "author": "James Harris <wopian@wopian.me>",
+  "license": "MIT",
+  "private": false
+}
