@@ -1,1 +1,1 @@
-export function isLocaleSupported(fallback?: string): boolean;
+export const isLocaleSupported: boolean;

@@ -1,3 +1,5 @@
+import { isLocaleSupported } from '../'
+
 /**
  * @name isLanguageAvailable
  * @param {string} userLocale Unified browser locale being tested for availability
@@ -14,8 +16,12 @@ export const isLanguageAvailable = (
   array
 ) => translatedLocales.filter(translatedLocale => {
   // Strip the region code from both locales (en-gb -> en)
-  const translatedLanguage = new Intl.Locale(translatedLocale).minimize().language
-  const browserLanguage = new Intl.Locale(userLocale).minimize().language
+  const translatedLanguage = isLocaleSupported()
+    ? new Intl.Locale(translatedLocale).minimize().language
+    : translatedLocale.split('-')[0]
+  const browserLanguage = isLocaleSupported()
+    ? new Intl.Locale(userLocale).minimize().language
+    : userLocale.split('-')[0]
 
   const isLanguageAvailable = translatedLanguage === browserLanguage
 

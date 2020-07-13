@@ -1,4 +1,4 @@
-import { deduplicate } from '../'
+import { deduplicate, isLocaleSupported } from '../'
 
 /**
  * @name unifyUserLocales
@@ -24,7 +24,9 @@ export const unifyUserLocales = (userLocales, options = {}) => {
 
   return deduplicate(
     userLocales.map((browserlocale, priority) => {
-      const unified = new Intl.Locale(browserlocale).maximize()
+      const unified = isLocaleSupported()
+        ? new Intl.Locale(browserlocale).maximize()
+        : browserlocale
       const region = (!options.languageOnly && unified.region)
         ? (options.regionLowerCase
           ? unified.region.toLowerCase()
