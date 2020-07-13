@@ -1,8 +1,8 @@
-name: Size Limit
+name: Build & Size Limit
 on: [push, pull_request]
 jobs:
-  size-limit:
-    name: Run size-limit on node ${{ matrix.node_version }} and ${{ matrix.os }}
+  build:
+    name: Build on node ${{ matrix.node_version }} and ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
