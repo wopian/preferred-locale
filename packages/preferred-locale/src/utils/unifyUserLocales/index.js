@@ -23,10 +23,10 @@ export const unifyUserLocales = (userLocales, options = {}) => {
   if (!options.languageOnly) options.languageOnly = false
 
   return deduplicate(
-    userLocales.map((browserlocale, priority) => {
+    userLocales.map((browserLocale, priority) => {
       const unified = isLocaleSupported()
-        ? new Intl.Locale(browserlocale).maximize()
-        : browserlocale
+        ? new Intl.Locale(browserLocale).maximize()
+        : { language: browserLocale.split('-')[0], region: browserLocale.split('-')[1] }
       const region = (!options.languageOnly && unified.region)
         ? (options.regionLowerCase
           ? unified.region.toLowerCase()
