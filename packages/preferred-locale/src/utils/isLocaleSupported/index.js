@@ -10,7 +10,7 @@
  * @example
  * isLocaleSupported('en-us') // true or false
  */
-export default (fallback = 'en-US') => {
+export const isLocaleSupported = (fallback = 'en-US') => {
   if (!Intl) return false
   if (!('Locale' in Intl)) return false
   const locale = new Intl.Locale(fallback)

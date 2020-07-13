@@ -1,4 +1,4 @@
-import isLocaleSupported from './'
+import { isLocaleSupported } from './'
 
 afterEach(() => {
   jest.clearAllMocks()

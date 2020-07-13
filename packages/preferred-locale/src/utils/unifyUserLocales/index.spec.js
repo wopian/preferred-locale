@@ -1,4 +1,4 @@
-import unifyUserLocales from './'
+import { unifyUserLocales } from './'
 
 describe('unifyUserLocales', () => {
   it('unifies browser locales', () => {

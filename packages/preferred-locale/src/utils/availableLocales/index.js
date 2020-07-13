@@ -1,4 +1,4 @@
-import isLanguageAvailable from '../isLanguageAvailable'
+import { isLanguageAvailable } from '../'
 
 /**
  * @name availableLocales
@@ -9,7 +9,7 @@ import isLanguageAvailable from '../isLanguageAvailable'
  * @returns {Object[]} Locales supported by both the browser and application
  * @private
  */
-export default (
+export const availableLocales = (
   userLocales,
   translatedLocales,
   options = {}

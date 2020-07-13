@@ -1,4 +1,4 @@
-import deduplicate from '../deduplicate'
+import { deduplicate } from '../'
 
 /**
  * @name unifyUserLocales
@@ -18,7 +18,7 @@ import deduplicate from '../deduplicate'
  * unifyUserLocales(['en-GB', 'en', 'en-US'], { languageOnly: true })
  * // [ { locale: 'en', priority: 0 } ]
  */
-export default (userLocales, options = {}) => {
+export const unifyUserLocales = (userLocales, options = {}) => {
   if (!options.regionLowerCase) options.regionLowerCase = false
   if (!options.languageOnly) options.languageOnly = false
 

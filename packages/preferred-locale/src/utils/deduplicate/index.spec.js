@@ -1,4 +1,4 @@
-import deduplicate from './'
+import { deduplicate } from './'
 
 describe('deduplicate', () => {
   it('returns early if a non-array is supplied', () => {

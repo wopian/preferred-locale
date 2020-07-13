@@ -1,4 +1,4 @@
-import availableLocales from './'
+import { availableLocales } from './'
 
 describe('availableLocales', () => {
   it('returns available locales', () => {

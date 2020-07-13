@@ -1,4 +1,4 @@
-import userLocales from './'
+import { userLocales } from './'
 
 describe('userLocales', () => {
   it('returns the user locale with fallback', () => {

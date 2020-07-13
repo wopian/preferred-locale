@@ -7,7 +7,7 @@
  * @returns {boolean} Is the language available?
  * @private
  */
-export default (
+export const isLanguageAvailable = (
   userLocale,
   translatedLocales,
   index,

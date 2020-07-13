@@ -1,4 +1,4 @@
-import isLanguageAvailable from './'
+import { isLanguageAvailable } from './'
 
 describe('isLanguageAvailable', () => {
   it('returns true if language is available but region wasn\'t', () => {

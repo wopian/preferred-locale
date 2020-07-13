@@ -1,8 +1,8 @@
-import unifyUserLocales from './unifyUserLocales'
-import availableLocales from './availableLocales'
-import userLocales from './userLocales'
+import { availableLocales, unifyUserLocales, userLocales } from './utils'
 
 /**
+ * Get the users' most preferred locale that is translated by your application.
+ *
  * @name preferredLocale
  * @param {string[]} translatedLocales Translations provided by the application
  * @param {string} fallback Source locale of the application. Used when no browser locale matches translatedLocales

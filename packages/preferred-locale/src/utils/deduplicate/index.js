@@ -8,7 +8,7 @@
  * @example <caption>Deduplicate an object array</caption>
  * deduplicate([ { locale: 'en-US' }, { locale: 'en-US' } ]) // [ { locale: 'en-US' } ]
 */
-export default array => {
+export const deduplicate = array => {
   if (!Array.isArray(array)) return array
   switch (typeof array[0]) {
     case 'string':
