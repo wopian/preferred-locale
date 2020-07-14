@@ -24,7 +24,7 @@
 
 |            Package | Package<br>Size | Node | Chrome | Firefox | Safari | Edge |
 | -----------------: | :-------------: | :--: | :----: | :-----: | :----: | :--: |
-| `preferred-locale` |   ≤ 551 bytes   |  10+ |   69+  |   68+   |   12+  |  18+ |
+| `preferred-locale` |   ≤ 642 bytes   |  10+ |   69+  |   68+   |   12+  |  18+ |
 
 ## Why?
 
