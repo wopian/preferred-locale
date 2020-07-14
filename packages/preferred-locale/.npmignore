@@ -2,3 +2,4 @@ src
 rollup.config.js
 *.tgz
 *.log*
+types/utils
