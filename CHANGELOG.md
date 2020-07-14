@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2](https://github.com/wopian/preferred-locale/compare/v1.0.1...v1.0.2) (2020-07-14)
+
+
+### Bug Fixes
+
+* **userLocales:** check Intl is implemented before checking if DateTimeFormat is implemented ([192012e](https://github.com/wopian/preferred-locale/commit/192012e))
+
+
+### Build System / Dependencies
+
+* add package keywords ([f07bd15](https://github.com/wopian/preferred-locale/commit/f07bd15))
+* do not publish types for internal functions ([ab45273](https://github.com/wopian/preferred-locale/commit/ab45273))
+
+
+### Chores
+
+* **release:** update documentation ([3d415b1](https://github.com/wopian/preferred-locale/commit/3d415b1))
+* **release:** update documentation ([847858a](https://github.com/wopian/preferred-locale/commit/847858a))
+
+
+### Documentation Changes
+
+* update package description ([78b4a33](https://github.com/wopian/preferred-locale/commit/78b4a33))
+
+
+
+
+
 ## [1.0.1](https://github.com/wopian/preferred-locale/compare/v1.0.0...v1.0.1) (2020-07-14)
 
 
