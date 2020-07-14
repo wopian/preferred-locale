@@ -6,7 +6,7 @@
   <a href=https://github.com/wopian/preferred-locale/graphs/contributors><img alt=contributors src=https://flat.badgen.net/github/contributors/wopian/preferred-locale></a>
 </p>
 
-<p align=center>🎌 Get a users' preferred locale/language from your app's available translations with zero dependencies</p>
+<p align=center>🎌 Get the users' most preferred locale/language from your app's available translations with zero dependencies</p>
 
 #
 

@@ -1,6 +1,6 @@
 {
   "private": true,
-  "description": "Get the users' most preferred locale/language from your app's available translations",
+  "description": "Get the users' most preferred locale/language from your app's available translations with zero dependencies",
   "repository": "https://github.com/wopian/preferred-locale",
   "homepage": "https://github.com/wopian/preferred-locale#readme",
   "bugs": {

@@ -1,7 +1,7 @@
 {
   "name": "preferred-locale",
   "version": "1.0.1",
-  "description": "Get a users' preferred locale/language from your app's available translations",
+  "description": "Get the users' most preferred locale/language from your app's available translations with zero dependencies",
   "main": "lib/index",
   "module": "lib/index",
   "unpkg": "lib/index.browser.js",
