@@ -1,6 +1,6 @@
 {
   "name": "preferred-locale",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Get the users' most preferred locale/language from your app's available translations with zero dependencies",
   "main": "lib/index",
   "module": "lib/index",

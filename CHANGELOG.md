@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.3](https://github.com/wopian/preferred-locale/compare/v1.0.2...v1.0.3) (2020-07-14)
+
+
+### Bug Fixes
+
+* **userLocales:** guard against window on node enviroments ([96d590c](https://github.com/wopian/preferred-locale/commit/96d590c))
+
+
+### Chores
+
+* **release:** update documentation ([ac80716](https://github.com/wopian/preferred-locale/commit/ac80716))
+
+
+
+
+
 ## [1.0.2](https://github.com/wopian/preferred-locale/compare/v1.0.1...v1.0.2) (2020-07-14)
 
 
