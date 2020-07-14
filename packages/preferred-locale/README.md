@@ -24,7 +24,7 @@
 
 |            Package | Package<br>Size | Node | Chrome | Firefox | Safari | Edge |
 | -----------------: | :-------------: | :--: | :----: | :-----: | :----: | :--: |
-| `preferred-locale` | ~580 bytes      |  10+ |   69+  |   68+   |   12+  |  18+ |
+| `preferred-locale` |    ~580 bytes   |  10+ |   69+  |   68+   |   12+  |  18+ |
 
 ## Why?
 
@@ -108,7 +108,7 @@ preferredLocale(translatedLocales, fallback)
 
 ### preferredLocale
 
-[packages/preferred-locale/src/index.js:14-22](https://github.com/wopian/preferred-locale/blob/78b4a330d35536720a8531ab6831f52ebb0655ec/packages/preferred-locale/src/index.js#L14-L22 "Source code on GitHub")
+[packages/preferred-locale/src/index.js:14-22](https://github.com/wopian/preferred-locale/blob/96d590cf447f8228699dbd98df9a575b400d5772/packages/preferred-locale/src/index.js#L14-L22 "Source code on GitHub")
 
 Get the users' most preferred locale that is translated by your application.
 
