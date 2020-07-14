@@ -108,7 +108,7 @@ preferredLocale(translatedLocales, fallback)
 
 ### preferredLocale
 
-[packages/preferred-locale/src/index.js:14-22](https://github.com/wopian/preferred-locale/blob/192012e50d7be5d2630c88234f863252e3746743/packages/preferred-locale/src/index.js#L14-L22 "Source code on GitHub")
+[packages/preferred-locale/src/index.js:14-22](https://github.com/wopian/preferred-locale/blob/78b4a330d35536720a8531ab6831f52ebb0655ec/packages/preferred-locale/src/index.js#L14-L22 "Source code on GitHub")
 
 Get the users' most preferred locale that is translated by your application.
 
