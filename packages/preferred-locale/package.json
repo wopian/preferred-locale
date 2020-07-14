@@ -64,5 +64,26 @@
       "path": "./lib/index.browser.js",
       "limit": "1 kb"
     }
+  ],
+  "keywords": [
+    "language",
+    "language-detection",
+    "detect",
+    "locale",
+    "localisation",
+    "localization",
+    "browser",
+    "node",
+    "system",
+    "lang",
+    "region",
+    "country",
+    "user",
+    "os",
+    "navigator",
+    "intl",
+    "intl.locale",
+    "dateTimeFormat",
+    "intl.dateTimeFormat"
   ]
 }
