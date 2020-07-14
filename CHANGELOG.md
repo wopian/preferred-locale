@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/wopian/preferred-locale/compare/v1.0.0...v1.0.1) (2020-07-14)
+
+
+### Build System / Dependencies
+
+* revert publish script change to make initial release ([ef81f1d](https://github.com/wopian/preferred-locale/commit/ef81f1d))
+
+
+### Chores
+
+* **release:** update documentation ([8ead7cd](https://github.com/wopian/preferred-locale/commit/8ead7cd))
+
+
+### Documentation Changes
+
+* update package size ([24e97bf](https://github.com/wopian/preferred-locale/commit/24e97bf))
+
+
+
+
+
 # [1.0.0](https://github.com/wopian/preferred-locale/compare/v0.1.0...v1.0.0) (2020-07-13)
 
 
