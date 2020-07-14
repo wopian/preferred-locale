@@ -6,6 +6,7 @@ import { isLanguageAvailable } from '../'
  * @param {string[]} translatedLocales Translations provided by the application
  * @param {Object} [options={}] Configuration options
  * @param {boolean} [options.regionLowerCase=false] If true, returns `en-us` instead of `en-US`
+ * @param {boolean} [options.languageOnly=false] If true, returns `en` instead of `en-US` or `en-us`
  * @returns {Object[]} Locales supported by both the browser and application
  * @private
  */
@@ -15,6 +16,7 @@ export const availableLocales = (
   options = {}
 ) => {
   if (!options.regionLowerCase) options.regionLowerCase = false
+  if (!options.languageOnly) options.languageOnly = false
 
   return userLocales.filter((userLocale, index, array) => {
     const formattedLocale = options.regionLowerCase
@@ -29,7 +31,8 @@ export const availableLocales = (
       formattedLocale,
       translatedLocales,
       index,
-      array
+      array,
+      options
     )
   })
 }
