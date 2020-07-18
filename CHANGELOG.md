@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.5](https://github.com/wopian/preferred-locale/compare/v1.0.4...v1.0.5) (2020-07-18)
+
+
+### Bug Fixes
+
+* **isLanguageAvailable:** correct typo in assigned variable name ([950c72e](https://github.com/wopian/preferred-locale/commit/950c72e))
+
+
+### Chores
+
+* **release:** update documentation ([705ab27](https://github.com/wopian/preferred-locale/commit/705ab27))
+
+
+### Tests
+
+* **deduplicate:** full line coverage ([c0a0bd8](https://github.com/wopian/preferred-locale/commit/c0a0bd8))
+* **userLocales:** full line coverage ([2d50bf1](https://github.com/wopian/preferred-locale/commit/2d50bf1))
+* **userLocales:** remove test case ([8be71cf](https://github.com/wopian/preferred-locale/commit/8be71cf))
+
+
+
+
+
 ## [1.0.4](https://github.com/wopian/preferred-locale/compare/v1.0.3...v1.0.4) (2020-07-14)
 
 
