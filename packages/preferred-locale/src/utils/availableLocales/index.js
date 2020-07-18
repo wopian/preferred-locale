@@ -1,4 +1,4 @@
-import { isLanguageAvailable } from '../'
+import { isLanguageAvailable, deduplicate } from '../'
 
 /**
  * @name availableLocales
@@ -18,7 +18,7 @@ export const availableLocales = (
   if (!options.regionLowerCase) options.regionLowerCase = false
   if (!options.languageOnly) options.languageOnly = false
 
-  return userLocales.filter((userLocale, index, array) => {
+  return deduplicate(userLocales.filter((userLocale, index, array) => {
     const formattedLocale = options.regionLowerCase
       ? userLocale.locale.toLowerCase()
       : userLocale.locale
@@ -34,5 +34,5 @@ export const availableLocales = (
       array,
       options
     )
-  })
+  }))
 }

@@ -22,7 +22,7 @@ export const isLanguageAvailable = (
 
   return translatedLocales.filter(translatedLocale => {
     const localeSupported = isLocaleSupported()
-    // Backwards compatibility for older browsers
+    // Backwards compatibility for older browsers (Don't return regionless locales unless language only)
     if (!localeSupported && !options.languageOnly && userLocale.split('-')[1] === undefined) return false
 
     // Strip the region code from both locales (en-gb -> en)
@@ -37,7 +37,7 @@ export const isLanguageAvailable = (
 
     // Update the locale field to the canonical region if there is no translations for the browser-provided region
     // For example, en-XX (unknown region) to en-US (translated)
-    if (isLanguageAvailable) array[index].locale = translatedLanguage
+    if (isLanguageAvailable) array[index].locale = translatedLocale
 
     return isLanguageAvailable
   }).length > 0
