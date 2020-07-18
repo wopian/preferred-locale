@@ -33,4 +33,9 @@ describe('deduplicate', () => {
       { locale: 'en-GB' }
     ])
   })
+
+  it('does not deduplicate non-string/object arrays', () => {
+    expect.assertions(1)
+    expect(deduplicate([ 1, 1, 2 ])).toStrictEqual([ 1, 1, 2 ])
+  })
 })
