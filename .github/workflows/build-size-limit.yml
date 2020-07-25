@@ -23,6 +23,7 @@ jobs:
         key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
     - name: Install yarn dependencies
       run: yarn install
+    - run: yarn bootstrap
     - name: Build package
       run: yarn build
     - name: Check built package sizes
