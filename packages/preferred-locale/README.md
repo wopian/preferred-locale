@@ -5,7 +5,7 @@
   <a href=https://www.npmjs.com/package/preferred-locale><img alt=npm src=https://flat.badgen.net/npm/dt/preferred-locale></a>
   <a href="https://david-dm.org/wopian/preferred-locale?path=packages/preferred-locale"><img alt=deps src=https://flat.badgen.net/david/dep/wopian/preferred-locale/packages/preferred-locale></a>
   <a href="https://bundlephobia.com/result?p=preferred-locale"><img alt=bundlephobia src="https://flat.badgen.net/bundlephobia/minzip/preferred-locale?label=library%20size"></a>
-  <a href="https://packagephobia.now.sh/result?p=preferred-locale"><img alt=packagephobia src="https://flat.badgen.net/packagephobia/install/preferred-locale?label=node_modules"></a>
+  <img alt=types src='https://flat.badgen.net/npm/types/preferred-locale'>
 </p>
 
 <p align=center>

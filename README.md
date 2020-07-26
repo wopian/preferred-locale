@@ -7,6 +7,7 @@
 </p>
 
 <p align=center>
+  <img alt=types src='https://flat.badgen.net/npm/types/preferred-locale'>
   <a href=https://github.com/wopian/preferred-locale/network/dependents><img alt=repoDependants src=https://flat.badgen.net/github/dependents-repo/wopian/preferred-locale></a>
   <a href=https://github.com/wopian/preferred-locale/graphs/contributors><img alt=devDeps src=https://flat.badgen.net/github/contributors/wopian/preferred-locale></a>
   <a href=https://github.com/sponsors/wopian><img alt=sponsor src='https://flat.badgen.net/badge/sponsor/%E2%9D%A4/pink?icon=github'></a>
