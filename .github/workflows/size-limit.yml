@@ -1,13 +1,13 @@
-name: Build & Size Limit
+name: Size Limit
 on: [push, pull_request]
 jobs:
-  build:
+  size-limit:
     name: Node ${{ matrix.node_version }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node_version: [10, 12, 14]
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        node_version: [14]
+        os: [ubuntu-latest]
     steps:
     - uses: actions/checkout@v2
     - name: Use node ${{ matrix.node_version }}
