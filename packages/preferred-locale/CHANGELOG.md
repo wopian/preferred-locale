@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.6](https://github.com/wopian/preferred-locale/compare/v1.0.5...v1.0.6) (2020-07-26)
+
+
+### Chores
+
+* **release:** update documentation ([ebea0bb](https://github.com/wopian/preferred-locale/commit/ebea0bb))
+
+
+### Documentation Changes
+
+* include github action badges ([a53774a](https://github.com/wopian/preferred-locale/commit/a53774a))
+
+
+### Tests
+
+* don't run 'Intl.Locale supported' tests on Node versions that do not support Intl.Locale ([1a1df51](https://github.com/wopian/preferred-locale/commit/1a1df51))
+
+
+
+
+
 ## [1.0.5](https://github.com/wopian/preferred-locale/compare/v1.0.4...v1.0.5) (2020-07-18)
 
 

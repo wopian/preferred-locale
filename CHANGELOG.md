@@ -3,6 +3,49 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.6](https://github.com/wopian/preferred-locale/compare/v1.0.5...v1.0.6) (2020-07-26)
+
+
+### Build System / Dependencies
+
+* update devdependency eslint to ~7.5.0 ([#1](https://github.com/wopian/preferred-locale/issues/1)) ([923badd](https://github.com/wopian/preferred-locale/commit/923badd))
+* update devdependency rollup to ~2.22.0 ([#2](https://github.com/wopian/preferred-locale/issues/2)) ([bd3f1d2](https://github.com/wopian/preferred-locale/commit/bd3f1d2))
+* update devdependency rollup to ~2.23.0 ([#3](https://github.com/wopian/preferred-locale/issues/3)) ([0bb410d](https://github.com/wopian/preferred-locale/commit/0bb410d))
+
+
+### Chores
+
+* **release:** update documentation ([ebea0bb](https://github.com/wopian/preferred-locale/commit/ebea0bb))
+
+
+### Continuous Integration
+
+* **jest:** remove continue on error ([6e3de3a](https://github.com/wopian/preferred-locale/commit/6e3de3a))
+* **jest:** rename github action from jest tests to unit tests ([3854785](https://github.com/wopian/preferred-locale/commit/3854785))
+* **size-limit:** only run once ([385c5a2](https://github.com/wopian/preferred-locale/commit/385c5a2))
+
+
+### Documentation Changes
+
+* include github action badges ([a53774a](https://github.com/wopian/preferred-locale/commit/a53774a))
+
+
+### Other Changes
+
+* Update jest.yml ([9fe74b3](https://github.com/wopian/preferred-locale/commit/9fe74b3))
+* Update jest.yml ([72e77ef](https://github.com/wopian/preferred-locale/commit/72e77ef))
+* Update eslint.yml ([14c9e90](https://github.com/wopian/preferred-locale/commit/14c9e90))
+* Update build-size-limit.yml ([e4d63d6](https://github.com/wopian/preferred-locale/commit/e4d63d6))
+
+
+### Tests
+
+* don't run 'Intl.Locale supported' tests on Node versions that do not support Intl.Locale ([1a1df51](https://github.com/wopian/preferred-locale/commit/1a1df51))
+
+
+
+
+
 ## [1.0.5](https://github.com/wopian/preferred-locale/compare/v1.0.4...v1.0.5) (2020-07-18)
 
 
