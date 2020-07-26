@@ -3,3 +3,4 @@ rollup.config.js
 *.tgz
 *.log*
 types/utils
+CHANGELOG.md

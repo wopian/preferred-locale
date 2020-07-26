@@ -3,13 +3,16 @@
 <p align=center>
   <a href=https://www.npmjs.com/package/preferred-locale><img alt=npm src=https://flat.badgen.net/npm/v/preferred-locale></a>
   <a href=https://www.npmjs.com/package/preferred-locale><img alt=npm src=https://flat.badgen.net/npm/dt/preferred-locale></a>
-  <a href="https://bundlephobia.com/result?p=preferred-locale"><img alt=bundlephobia src=https://flat.badgen.net/bundlephobia/minzip/preferred-locale></a>
-  <a href="https://david-dm.org/wopian/preferred-locale?path=packages/preferred-locale"><img alt=deps src="https://flat.badgen.net/david/dep/wopian/preferred-locale/packages/preferred-locale"></a>
+  <a href="https://david-dm.org/wopian/preferred-locale?path=packages/preferred-locale"><img alt=deps src=https://flat.badgen.net/david/dep/wopian/preferred-locale/packages/preferred-locale></a>
+  <a href="https://bundlephobia.com/result?p=preferred-locale"><img alt=bundlephobia src="https://flat.badgen.net/bundlephobia/minzip/preferred-locale?label=library%20size"></a>
+  <a href="https://packagephobia.now.sh/result?p=preferred-locale"><img alt=packagephobia src="https://flat.badgen.net/packagephobia/install/preferred-locale?label=node_modules"></a>
 </p>
 
 <p align=center>
-  <a href="https://packagephobia.now.sh/result?p=preferred-locale"><img alt=packagephobia src=https://flat.badgen.net/packagephobia/install/preferred-locale></a>
-  <a href=https://github.com/wopian/preferred-locale/graphs/contributors><img alt=contributors src=https://flat.badgen.net/github/contributors/wopian/preferred-locale></a>
+  <a href="https://github.com/wopian/preferred-locale/actions"><img alt=checks src="https://flat.badgen.net/github/checks/wopian/preferred-locale"></a>
+  <a href=https://github.com/wopian/preferred-locale/network/dependents><img alt=repoDependants src=https://flat.badgen.net/github/dependents-repo/wopian/preferred-locale></a>
+  <a href=https://github.com/wopian/preferred-locale/graphs/contributors><img alt=devDeps src=https://flat.badgen.net/github/contributors/wopian/preferred-locale></a>
+  <a href=https://github.com/sponsors/wopian><img alt=sponsor src='https://flat.badgen.net/badge/sponsor/%E2%9D%A4/pink?icon=github'></a>
 </p>
 
 <p align=center>🎌 Get the users' most preferred locale/language from your app's available translations with zero dependencies</p>
