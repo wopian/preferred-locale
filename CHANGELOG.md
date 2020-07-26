@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.9](https://github.com/wopian/preferred-locale/compare/v1.0.6...v1.0.9) (2020-07-26)
+
+
+### Chores
+
+* **release:** update documentation ([d219033](https://github.com/wopian/preferred-locale/commit/d219033))
+
+
+### Continuous Integration
+
+* include published version in commit message ([a497a89](https://github.com/wopian/preferred-locale/commit/a497a89))
+
+
+### Documentation Changes
+
+* add typescript types badge ([ad36e07](https://github.com/wopian/preferred-locale/commit/ad36e07))
+
+
+
+
+
 ## [1.0.6](https://github.com/wopian/preferred-locale/compare/v1.0.5...v1.0.6) (2020-07-26)
 
 
