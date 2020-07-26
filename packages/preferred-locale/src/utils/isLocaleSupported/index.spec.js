@@ -15,8 +15,10 @@ describe('isLocaleSupported', () => {
     Intl = storedIntl
   })
 
-  it('returns true if Intl.Locale is spec compliant', () => {
-    expect.assertions(1)
-    expect(isLocaleSupported()).toBe(true)
-  })
+  if (Intl && 'Locale' in Intl) {
+    it('returns true if Intl.Locale is spec compliant', () => {
+      expect.assertions(1)
+      expect(isLocaleSupported()).toBe(true)
+    })
+  }
 })
