@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.10](https://github.com/wopian/preferred-locale/compare/v1.0.9...v1.0.10) (2020-08-04)
+
+
+### Chores
+
+* **release:** update documentation ([49cef7c](https://github.com/wopian/preferred-locale/commit/49cef7c))
+* add funding field to package.json ([30d1651](https://github.com/wopian/preferred-locale/commit/30d1651))
+
+
+### Other Changes
+
+* Create codeql-analysis.yml ([249ff0a](https://github.com/wopian/preferred-locale/commit/249ff0a))
+
+
+
+
+
 ## [1.0.9](https://github.com/wopian/preferred-locale/compare/v1.0.6...v1.0.9) (2020-07-26)
 
 
