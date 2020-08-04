@@ -2,7 +2,7 @@ name: Build
 on: [push, pull_request]
 jobs:
   build:
-    name: Node ${{ matrix.node_version }} on ${{ matrix.os }}
+    name: Build (${{ matrix.node_version}}-${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
