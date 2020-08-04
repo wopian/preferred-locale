@@ -35,6 +35,7 @@
   "bugs": {
     "url": "https://github.com/wopian/preferred-locale/issues"
   },
+  "funding": "https://github.com/sponsors/wopian",
   "sideEffects": false,
   "author": "James Harris <wopian@wopian.me>",
   "license": "MIT",
