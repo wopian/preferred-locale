@@ -31,7 +31,7 @@ This is a monorepo containing the following packages:
 
 | Package            | Package<br>Size | Node | Chrome | Firefox | Safari | Edge |
 | -----------------: | :-------------: | :--: | :----: | :-----: | :----: | :--: |
-| `preferred-locale` | ~600 bytes      | 10+  | 69+    | 68+     | 12+    | 18+  |
+| `preferred-locale` | ~600 bytes      | 12+  | 69+    | 68+     | 12+    | 18+  |
 
 ## Why?
 

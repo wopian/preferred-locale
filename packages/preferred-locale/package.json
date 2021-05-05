@@ -40,7 +40,7 @@
   "author": "James Harris <wopian@wopian.me>",
   "license": "MIT",
   "engines": {
-    "node": ">= 10"
+    "node": ">= 12"
   },
   "scripts": {
     "docs:lint": "documentation lint src/index.js",

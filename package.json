@@ -9,7 +9,7 @@
   "author": "James Harris <wopian@wopian.me>",
   "license": "MIT",
   "engines": {
-    "node": ">= 10"
+    "node": ">= 12"
   },
   "workspaces": [
     "packages/*"
