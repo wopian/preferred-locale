@@ -29,8 +29,8 @@ export const unifyUserLocales = (userLocales, options = {}) => {
         : { language: browserLocale.split('-')[0], region: browserLocale.split('-')[1] }
       const region = (!options.languageOnly && unified.region)
         ? (options.regionLowerCase
-          ? unified.region.toLowerCase()
-          : unified.region)
+            ? unified.region.toLowerCase()
+            : unified.region)
         : undefined
       const locale = region
         ? `${unified.language}-${region}`
