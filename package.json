@@ -65,7 +65,7 @@
         ],
         "coverageDirectory": "<rootDir>/coverage",
         "transform": {
-          "\\.[jt]sx?$": "babel-jest"
+          "^.+\\.js$": "<rootDir>/config/jest.transform.js"
         },
         "testMatch": [
           "**/*.spec.js?(x)",
@@ -83,7 +83,7 @@
         ],
         "coverageDirectory": "<rootDir>/coverage",
         "transform": {
-          "\\.[jt]sx?$": "babel-jest"
+          "^.+\\.js$": "<rootDir>/config/jest.transform.js"
         },
         "testMatch": [
           "**/*.spec.js?(x)",
