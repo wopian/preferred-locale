@@ -50,7 +50,7 @@
     "build": "yarn rollup"
   },
   "devDependencies": {
-    "@size-limit/preset-small-lib": "~6.0.0"
+    "@size-limit/preset-small-lib": "~7.0.0"
   },
   "size-limit": [
     {
