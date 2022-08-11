@@ -98,7 +98,7 @@
   },
   "renovate": {
     "extends": [
-      "@wopian",
+      "github>wopian/renovate-config",
       ":pathSemanticCommitType(packages/preferred-locale/**,build(preferred-locale))"
     ]
   }
