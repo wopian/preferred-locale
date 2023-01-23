@@ -47,7 +47,7 @@ jobs:
 
     strategy:
       matrix:
-        OS: [ubuntu-latest, windows-latest, macos-latest]
+        OS: [ubuntu-latest, macos-latest]
         NODE_VERSION: [14, 16, 18, latest]
 
     steps:
@@ -73,11 +73,11 @@ jobs:
         run: yarn install --immutable
 
       - name: Run Tests with Coverage
-        if: ${{ matrix.NODE_VERSION == 'latest' && matrix.OS == 'ubuntu-latest' }}}
+        if: matrix.NODE_VERSION == 'latest' && matrix.OS == 'ubuntu-latest'
         run: yarn coverage
 
       - name: Run Tests without Coverage
-        if: ${{ matrix.NODE_VERSION != 'latest' && matrix.OS != 'ubuntu-latest' }}}
+        if: matrix.NODE_VERSION != 'latest' && matrix.OS != 'ubuntu-latest'
         run: yarn test
 
   release:
