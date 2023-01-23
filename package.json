@@ -3,6 +3,7 @@
   "version": "1.0.10",
   "description": "Get the users' most preferred locale/language from your app's available translations with zero dependencies",
   "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
