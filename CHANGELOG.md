@@ -12,11 +12,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * add funding field to package.json ([30d1651](https://github.com/wopian/preferred-locale/commit/30d1651))
 
 
-### Other Changes
-
-* Create codeql-analysis.yml ([249ff0a](https://github.com/wopian/preferred-locale/commit/249ff0a))
-
-
 
 
 
@@ -26,11 +21,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Chores
 
 * **release:** update documentation ([d219033](https://github.com/wopian/preferred-locale/commit/d219033))
-
-
-### Continuous Integration
-
-* include published version in commit message ([a497a89](https://github.com/wopian/preferred-locale/commit/a497a89))
 
 
 ### Documentation Changes
@@ -44,36 +34,14 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ## [1.0.6](https://github.com/wopian/preferred-locale/compare/v1.0.5...v1.0.6) (2020-07-26)
 
 
-### Build System / Dependencies
-
-* update devdependency eslint to ~7.5.0 ([#1](https://github.com/wopian/preferred-locale/issues/1)) ([923badd](https://github.com/wopian/preferred-locale/commit/923badd))
-* update devdependency rollup to ~2.22.0 ([#2](https://github.com/wopian/preferred-locale/issues/2)) ([bd3f1d2](https://github.com/wopian/preferred-locale/commit/bd3f1d2))
-* update devdependency rollup to ~2.23.0 ([#3](https://github.com/wopian/preferred-locale/issues/3)) ([0bb410d](https://github.com/wopian/preferred-locale/commit/0bb410d))
-
-
 ### Chores
 
 * **release:** update documentation ([ebea0bb](https://github.com/wopian/preferred-locale/commit/ebea0bb))
 
 
-### Continuous Integration
-
-* **jest:** remove continue on error ([6e3de3a](https://github.com/wopian/preferred-locale/commit/6e3de3a))
-* **jest:** rename github action from jest tests to unit tests ([3854785](https://github.com/wopian/preferred-locale/commit/3854785))
-* **size-limit:** only run once ([385c5a2](https://github.com/wopian/preferred-locale/commit/385c5a2))
-
-
 ### Documentation Changes
 
 * include github action badges ([a53774a](https://github.com/wopian/preferred-locale/commit/a53774a))
-
-
-### Other Changes
-
-* Update jest.yml ([9fe74b3](https://github.com/wopian/preferred-locale/commit/9fe74b3))
-* Update jest.yml ([72e77ef](https://github.com/wopian/preferred-locale/commit/72e77ef))
-* Update eslint.yml ([14c9e90](https://github.com/wopian/preferred-locale/commit/14c9e90))
-* Update build-size-limit.yml ([e4d63d6](https://github.com/wopian/preferred-locale/commit/e4d63d6))
 
 
 ### Tests
@@ -170,11 +138,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ## [1.0.1](https://github.com/wopian/preferred-locale/compare/v1.0.0...v1.0.1) (2020-07-14)
 
 
-### Build System / Dependencies
-
-* revert publish script change to make initial release ([ef81f1d](https://github.com/wopian/preferred-locale/commit/ef81f1d))
-
-
 ### Chores
 
 * **release:** update documentation ([8ead7cd](https://github.com/wopian/preferred-locale/commit/8ead7cd))
@@ -200,7 +163,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Continuous Integration
 
 * update workflow configs ([b8cef20](https://github.com/wopian/preferred-locale/commit/b8cef20))
-* **eslint:** fix tag version number ([db5c5ec](https://github.com/wopian/preferred-locale/commit/db5c5ec))
 
 
 ### Tests
@@ -229,20 +191,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Continuous Integration
 
-* **build:** cache specifically for lerna monorepos ([52cc81e](https://github.com/wopian/preferred-locale/commit/52cc81e))
-* **build:** use yarn cache ([f6254f6](https://github.com/wopian/preferred-locale/commit/f6254f6))
-* **eslint:** add github action ([1c1b7e3](https://github.com/wopian/preferred-locale/commit/1c1b7e3))
-* **size-limit:** fix wrong version pinning ([b79f8ab](https://github.com/wopian/preferred-locale/commit/b79f8ab))
 * **size-limit:** remove brotli config ([4a161ce](https://github.com/wopian/preferred-locale/commit/4a161ce))
 * add github action for package size limits ([32113cf](https://github.com/wopian/preferred-locale/commit/32113cf))
-* update action names ([ae8be7f](https://github.com/wopian/preferred-locale/commit/ae8be7f))
-* **size-limit:** migrate version to node-version ([8d63dda](https://github.com/wopian/preferred-locale/commit/8d63dda))
 * **typo:** add config and exclude words ([c919a70](https://github.com/wopian/preferred-locale/commit/c919a70))
 
 
 ### Documentation Changes
 
-* add dependencies badge to root README ([c8af2bb](https://github.com/wopian/preferred-locale/commit/c8af2bb))
 * add rationale for package ([b4a90e8](https://github.com/wopian/preferred-locale/commit/b4a90e8))
 * add READMEs ([89ab29c](https://github.com/wopian/preferred-locale/commit/89ab29c))
 
@@ -250,7 +205,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### New Features
 
 * implement modern implementation using Intl.Locale ([78002b1](https://github.com/wopian/preferred-locale/commit/78002b1))
-* initialise repo ([bde02d4](https://github.com/wopian/preferred-locale/commit/bde02d4))
 
 
 ### Tests

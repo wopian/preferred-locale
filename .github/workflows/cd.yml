@@ -1,0 +1,71 @@
+name: CD
+
+on:
+  release:
+    types: [released]
+  workflow_dispatch:
+    branches: [v*]
+
+env:
+  FORCE_COLOR: true
+  NODE_VERSION: 18
+
+jobs:
+  deploy:
+    name: Deploy Bot
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Install Dependencies
+        run: yarn install --immutable
+
+      - name: Build Bot
+        run: yarn build
+
+      - name: Copy Files
+        run: |
+          cp package.json dist/package.json
+          cp yarn.lock dist/yarn.lock
+          cp .yarnrc.yml dist/.yarnrc.yml
+          mkdir -p dist/.yarn/releases
+          cp -r .yarn/releases/ dist/.yarn/
+          mkdir -p dist/.yarn/plugins
+          cp -r .yarn/plugins/ dist/.yarn/
+      - name: Deploy Changes
+        uses: wopian/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: production
+          FOLDER: dist
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SKIP_EMPTY_COMMITS: true
+          MESSAGE: ${{ github.event.release.tag_name }} {sha} $(date +'%Y-%m-%dT%H:%M:%S')
+
+      - name: Announce Deployment
+        if: success()
+        run: |
+          curl "https://control.sparkedhost.us/api/client/servers/${{ vars.SPARKEDHOST_SERVER }}/power" \
+          -H 'Accept: application/json' \
+          -H 'Content-Type: application/json' \
+          -H 'Authorization: Bearer ${{ secrets.SPARKEDHOST_TOKEN }}' \
+          -X POST \
+          -d '{
+          "signal": "restart"
+          }'

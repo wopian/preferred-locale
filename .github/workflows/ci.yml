@@ -1,101 +1,112 @@
 name: CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [develop]
+  workflow_dispatch:
+    branches: [develop]
 
 env:
   FORCE_COLOR: true
+  NODE_VERSION: 18
 
 jobs:
+  setup:
+    name: Lint Package
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Install Dependencies
+        run: yarn install --immutable
+
+      - name: Run Linter
+        run: yarn lint
+
   test:
-    name: Test (${{ matrix.node_version}}-${{ matrix.os }})
-
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        node_version: [12, 14, 16]
-        os: [ubuntu-latest, windows-latest, macos-latest]
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Use node ${{ matrix.node_version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node_version }}
-
-    - name: Restore cache
-      uses: actions/cache@v2
-      with:
-        path: |
-          node_modules
-          */*/node_modules
-        key: ${{ matrix.os }}-${{ matrix.node_version}}-yarn-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: ${{ matrix.os }}-${{ matrix.node_version }}-yarn-
-
-    - name: Install yarn dependencies
-      run: yarn install
-
-    - name: Bootstrap lerna packages
-      run: yarn bootstrap
-
-    - name: Lint source code
-      run: yarn lint
-      if: ${{ matrix.os == 'ubuntu-latest' }}
-
-    - name: Jest with code coverage
-      if: ${{ matrix.node_version == 16 && matrix.os == 'ubuntu-latest' }}
-      run: yarn test:coverage
-
-    - name: Jest
-      if: ${{ matrix.node_version != 16 || matrix.os != 'ubuntu-latest' }}
-      run: yarn jest
-
-    - name: Upload test coverage to Code Climate
-      if: ${{ matrix.node_version == 16 && matrix.os == 'ubuntu-latest' }}
-      uses: paambaati/codeclimate-action@v3.0.0
-      env:
-        CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-
-  build:
-    name: Build (${{ matrix.node_version}}-${{ matrix.os }})
-    needs: test
-
-    runs-on: ${{ matrix.os }}
+    name: Test Package
+    runs-on: ${{ matrix.OS }}
+    needs: [setup]
 
     strategy:
       matrix:
-        node_version: [16]
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        OS: [ubuntu-latest, windows-latest, macos-latest]
+        NODE_VERSION: [14, 16, 18, latest]
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-    - name: Use node ${{ matrix.node_version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node_version }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.NODE_VERSION }}
 
-    - name: Restore cache
-      uses: actions/cache@v2
-      with:
-        path: |
-          node_modules
-          */*/node_modules
-        key: ${{ matrix.os }}-${{ matrix.node_version}}-yarn-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: ${{ matrix.os }}-${{ matrix.node_version }}-yarn-
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
 
-    - name: Install yarn dependencies
-      run: yarn install
+      - uses: actions/cache@v3
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
 
-    - name: Bootstrap lerna packages
-      run: yarn bootstrap
+      - name: Install Dependencies
+        run: yarn install --immutable
 
-    - name: Build lerna packages
-      run: yarn build
+      - name: Run Tests with Coverage
+        if: ${{ matrix.NODE_VERSION == 'latest' && matrix.OS == 'ubuntu-latest' }}}
+        run: yarn coverage
 
-    - name: Lint package sizes
-      run: yarn size
-      if: ${{ matrix.os == 'ubuntu-latest' }}
+      - name: Run Tests without Coverage
+        if: ${{ matrix.NODE_VERSION != 'latest' && matrix.OS != 'ubuntu-latest' }}}
+        run: yarn test
+
+  release:
+    name: Release Package
+    runs-on: ubuntu-latest
+    needs: [setup, test]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.NODE_VERSION }}
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install Dependencies
+        run: yarn install --immutable
+#      - name: Create Release
+#        if: success() && github.ref == 'refs/heads/develop'
+#        run: yarn semantic-release
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

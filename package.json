@@ -1,104 +1,118 @@
 {
-  "private": true,
+  "name": "preferred-locale",
+  "version": "1.0.10",
   "description": "Get the users' most preferred locale/language from your app's available translations with zero dependencies",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "repository": "https://github.com/wopian/preferred-locale",
   "homepage": "https://github.com/wopian/preferred-locale#readme",
   "bugs": {
     "url": "https://github.com/wopian/preferred-locale/issues"
   },
+  "funding": "https://github.com/sponsors/wopian",
+  "sideEffects": false,
   "author": "James Harris <wopian@wopian.me>",
   "license": "MIT",
   "engines": {
     "node": ">= 12"
   },
-  "workspaces": [
-    "packages/*"
-  ],
+  "type": "module",
   "scripts": {
-    "diff": "lerna diff",
-    "updated": "lerna updated -l --sort",
-    "updated:json": "yarn updated --json",
-    "bootstrap": "lerna bootstrap",
-    "build": "lerna exec yarn build",
-    "docs": "lerna exec --parallel yarn docs:lint",
-    "docs:build": "lerna exec --parallel yarn docs:build",
-    "docs:typescript": "lerna exec --parallel yarn docs:typescript",
-    "docs:release": "yarn docs && yarn docs:build && yarn docs:typescript",
-    "fix": "eslint . --fix",
-    "lint": "eslint .",
-    "test": "yarn test:coverage && yarn lint && yarn docs && yarn build && yarn size",
-    "test:coverage": "jest --coverage",
-    "release": "yarn updated && yarn release:test && yarn release:commit && yarn release:lerna",
-    "release:test": "jest && yarn lint && yarn docs:release && yarn build",
-    "release:commit": "git commit -am \"chore(release): update documentation\"",
-    "release:lerna": "lerna publish",
-    "browserlist": "npx browserslist \"last 2 years, not < 0.05%\"",
-    "size": "lerna exec size-limit"
+    "build": "tsc",
+    "lint": "eslint . --ext .js,.cjs,.mjs,.ts,.cts,.mts --fix --ignore-path .gitignore",
+    "lint:ci": "eslint . --ext .js,.cjs,.mjs,.ts,.cts,.mts --ignore-path .gitignore",
+    "test": "ava",
+    "coverage": "c8 --all --src=dist --skip-full ava",
+    "document": "typedoc src/index.ts"
   },
   "devDependencies": {
-    "@babel/cli": "~7.16.0",
-    "@babel/core": "~7.16.0",
-    "@babel/preset-env": "~7.16.0",
-    "@rollup/plugin-babel": "~5.3.0",
-    "babel-jest": "~27.4.0",
-    "conventional-changelog-angular-all-2": "~5.0.3",
-    "cross-env": "~7.0.2",
-    "documentation": "~13.2.0",
-    "eslint": "~8.7.0",
-    "eslint-config-wopian": "~3.0.0",
-    "jest": "~27.4.0",
-    "lerna": "~4.0.0",
-    "rollup": "~2.64.0",
-    "rollup-plugin-delete": "~2.0.0",
-    "rollup-plugin-local-resolve": "~1.0.7",
-    "rollup-plugin-terser": "~7.0.0",
+    "@ava/typescript": "~3.0.1",
+    "@rushstack/eslint-patch": "~1.2.0",
+    "@semantic-release/changelog": "~6.0.2",
+    "@semantic-release/commit-analyzer": "~9.0.2",
+    "@semantic-release/github": "~8.0.7",
+    "@semantic-release/npm": "~8.0.1",
+    "@semantic-release/release-notes-generator": "~10.0.3",
+    "@size-limit/preset-small-lib": "~7.0.0",
+    "@types/node": "~18.11.18",
+    "@typescript-eslint/eslint-plugin": "~5.48.1",
+    "@typescript-eslint/parser": "~5.48.1",
+    "ava": "~5.1.1",
+    "c8": "~7.12.0",
+    "eslint": "~8.32.0",
+    "eslint-config-prettier": "~8.6.0",
+    "eslint-plugin-import": "~2.27.4",
+    "eslint-plugin-prettier": "~4.2.1",
+    "eslint-plugin-simple-import-sort": "~9.0.0",
+    "eslint-plugin-unicorn": "~45.0.2",
+    "prettier": "~2.8.3",
+    "semantic-release": "~20.0.2",
     "size-limit": "~7.0.0",
-    "typescript": "~4.5.0"
+    "ts-node": "~10.9.1",
+    "typedoc": "~0.23.24",
+    "typescript": "~4.9.4"
   },
-  "jest": {
-    "projects": [
-      {
-        "displayName": "browser",
-        "testEnvironment": "jsdom",
-        "collectCoverageFrom": [
-          "**/src/**/*.js"
-        ],
-        "coverageDirectory": "<rootDir>/coverage",
-        "transform": {
-          "^.+\\.js$": "<rootDir>/config/jest.transform.js"
-        },
-        "testMatch": [
-          "**/*.spec.js?(x)",
-          "**/*.spec.browser.js?(x)"
-        ],
-        "setupFilesAfterEnv": [
-          "<rootDir>/config/setupTests.browser.js"
-        ]
-      },
-      {
-        "displayName": "node",
-        "testEnvironment": "node",
-        "collectCoverageFrom": [
-          "**/src/**/*.js"
-        ],
-        "coverageDirectory": "<rootDir>/coverage",
-        "transform": {
-          "^.+\\.js$": "<rootDir>/config/jest.transform.js"
-        },
-        "testMatch": [
-          "**/*.spec.js?(x)",
-          "**/*.spec.node.js?(x)"
-        ],
-        "setupFilesAfterEnv": [
-          "<rootDir>/config/setupTests.node.js"
-        ]
+  "dependencies": {
+    "axios": "1.2.3",
+    "date-fns": "2.29.3",
+    "discord.js": "14.7.1",
+    "dotenv": "16.0.3",
+    "fastest-levenshtein": "~1.0.16",
+    "knex": "^2.4.1",
+    "mysql2": "^3.0.1",
+    "pbkdf2": "^3.1.2"
+  },
+  "ava": {
+    "utilizeParallelBuilds": true,
+    "typescript": {
+      "compile": "tsc",
+      "rewritePaths": {
+        "src/": "dist/"
       }
-    ]
+    }
   },
   "renovate": {
     "extends": [
-      "@wopian",
-      ":pathSemanticCommitType(packages/preferred-locale/**,build(preferred-locale))"
+      "local>wopian/renovate-config"
     ]
-  }
+  },
+  "size-limit": [
+    {
+      "path": "./lib/index.js",
+      "limit": "1 kb"
+    },
+    {
+      "path": "./lib/index.mjs",
+      "limit": "1 kb"
+    },
+    {
+      "path": "./lib/index.browser.js",
+      "limit": "1 kb"
+    }
+  ],
+  "keywords": [
+    "language",
+    "language-detection",
+    "detect",
+    "locale",
+    "localisation",
+    "localization",
+    "browser",
+    "node",
+    "system",
+    "lang",
+    "region",
+    "country",
+    "user",
+    "os",
+    "navigator",
+    "intl",
+    "intl.locale",
+    "dateTimeFormat",
+    "intl.dateTimeFormat"
+  ],
+  "packageManager": "yarn@3.3.1"
 }
