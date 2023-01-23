@@ -104,6 +104,9 @@ jobs:
 
       - name: Install Dependencies
         run: yarn install --immutable
+
+      - name: Build Package
+        run: yarn build
 #      - name: Create Release
 #        if: success() && github.ref == 'refs/heads/develop'
 #        run: yarn semantic-release
