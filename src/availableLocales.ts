@@ -7,33 +7,39 @@ interface AvailableLocalesProperties {
   options?: PreferredLocaleOptions
 }
 
+interface MatchToRename {
+  index: number
+  appLocale: string
+}
+
 export const availableLocales = ({
   userLocales,
   appLocales,
   options = {}
-}: AvailableLocalesProperties) =>
-  userLocales.filter((userLocale, index, array) => {
-    const formattedUserLocale = options.regionLowerCase
+}: AvailableLocalesProperties) => {
+  const matchesToRename: MatchToRename[] = []
+  const matchedLocales = userLocales.filter((userLocale, index, array) => {
+    const formattedUserLocale: string = options.regionLowerCase
       ? userLocale.toLowerCase()
       : userLocale
 
     // Escape early if the language and region match exactly
     if (appLocales.includes(formattedUserLocale)) return true
 
-    console.log('formattedUserLocale', formattedUserLocale)
-    console.log(isLanguageAvailable({
+    const { isAvailable, appLocale } = isLanguageAvailable({
       userLocale: formattedUserLocale,
       appLocales,
-      index,
-      array,
-      options
-    }))
-
-    return isLanguageAvailable({
-      userLocale: formattedUserLocale,
-      appLocales,
-      index,
-      array,
       options
     })
+
+    if (isAvailable) matchesToRename.push({ index, appLocale })
+
+    return isAvailable
   })
+
+  return matchedLocales.map((matchedLocale, index) => {
+    if (matchesToRename.length === 0) return matchedLocale
+    const { appLocale } = matchesToRename[index]
+    return appLocale
+  })
+}

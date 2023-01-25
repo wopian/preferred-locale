@@ -25,7 +25,5 @@ export const preferredLocale = ({
     options
   })
 
-  console.log(matchedLocales)
-
   return matchedLocales[0] || fallback
 }

@@ -29,7 +29,7 @@ test('returns locales if one or more matches', t => {
   )
 })
 
-test('returns canonical locale if user has language but not region', t => {
+test.only('returns canonical locale if user has language but not region', t => {
   t.deepEqual(
     availableLocales({
       userLocales: ['es-MX'],

@@ -3,26 +3,22 @@ import test from 'ava'
 import { isLanguageAvailable } from './isLanguageAvailable.js'
 
 test('marks canonical locale as available when no region is provided', t => {
-  t.is(
+  t.deepEqual(
     isLanguageAvailable({
       userLocale: 'en',
-      appLocales: ['en-US'],
-      index: 0,
-      array: ['en-US']
+      appLocales: ['en-US']
     }),
-    true
+    { isAvailable: true, appLocale: 'en-US' }
   )
 })
 
 test('marks canonical locale as available when a different region is provided', t => {
-  t.is(
+  t.deepEqual(
     isLanguageAvailable({
       userLocale: 'es-MX',
-      appLocales: ['es-ES'],
-      index: 0,
-      array: ['es-ES']
+      appLocales: ['es-ES']
     }),
-    true
+    { isAvailable: true, appLocale: 'es-ES' }
   )
 })
 
@@ -32,17 +28,15 @@ test('returns early for older browsers when languageOnly option is true', t => {
   // eslint-disable-next-line no-global-assign
   Intl = undefined
 
-  t.is(
+  t.deepEqual(
     isLanguageAvailable({
       userLocale: 'en',
       appLocales: ['en'],
-      index: 0,
-      array: ['en-US'],
       options: {
         languageOnly: true
       }
     }),
-    true
+    { isAvailable: true, appLocale: 'en' }
   )
 
   // @ts-expect-error - We're restoring the Intl namespace
