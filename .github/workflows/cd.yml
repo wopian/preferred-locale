@@ -12,7 +12,7 @@ env:
 
 jobs:
   deploy:
-    name: Deploy Package
+    name: Deploy Documentation
     runs-on: ubuntu-latest
 
     steps:
@@ -36,8 +36,8 @@ jobs:
       - name: Install Dependencies
         run: yarn install --immutable
 
-      - name: Build Package
-        run: yarn build
+      - name: Build Documentation
+        run: yarn document
 
       - name: Deploy Documentation
         uses: wopian/git-publish-subdir-action@develop
