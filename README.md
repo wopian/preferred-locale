@@ -22,9 +22,31 @@
 - Zero dependencies
 - TypeScript support
 
-## API Documentation
+## Usage
 
 This library is fully typed with TSDoc examples. View the online documentation here: https://wopian.github.io/preferred-locale/
+
+```ts
+import { preferredLocale } from 'preferred-locale'
+
+// Note: All examples assume the browser's reported locales are:
+// [ 'en-GB', 'en', 'ja-JP', 'en-US', 'ja' ]
+
+const supportedLocales = ['en-US', 'ja-JP']
+const fallbackLocale = 'ja-JP'
+const locale = preferredLocale(supportedLocales, fallbackLocale)
+console.log(locale) // 'en-US', converts 'en-GB' and 'en' to 'en-US' as neither are translated, placing it before 'ja-JP' in preference order
+
+preferredLocale(['en-us', 'fr-fr'], ['en-us'], {
+  regionLowerCase: true
+}) // 'en-us', converts 'en-GB' to 'en-us' as 'en-gb' is not translated
+
+preferredLocale(['de', 'fr'], ['fr'], {
+  languageOnly: true
+}) // 'fr', converts 'en-GB' to 'en' (etc). No matching locales so returns 'fr' fallback
+
+preferredLocale(['en-US', 'en-GB'], ['en-US']) // 'en-GB', as it is translated and first in user's preference order
+```
 
 ## Guaranteed Node / Browser Support
 
@@ -85,3 +107,11 @@ All code released under [MIT]
 [github releases]: https://github.com/wopian/preferred-locale/releases
 [contributing]: https://github.com/wopian/preferred-locale/blob/master/CONTRIBUTING.md
 [mit]: https://github.com/wopian/preferred-locale/blob/master/LICENSE.md
+
+```
+
+```
+
+```
+
+```
