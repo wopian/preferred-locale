@@ -1,5 +1,4 @@
-import { PreferredLocaleOptions } from './index.js'
-import { isLanguageAvailable } from './isLanguageAvailable.js'
+import { getAvailableLanguage, PreferredLocaleOptions } from './index.js'
 
 interface AvailableLocalesProperties {
   userLocales: string[]
@@ -18,7 +17,7 @@ export const availableLocales = ({
   options = {}
 }: AvailableLocalesProperties) => {
   const matchesToRename: MatchToRename[] = []
-  const matchedLocales = userLocales.filter((userLocale, index, array) => {
+  const matchedLocales = userLocales.filter((userLocale, index) => {
     const formattedUserLocale: string = options.regionLowerCase
       ? userLocale.toLowerCase()
       : userLocale
@@ -26,7 +25,7 @@ export const availableLocales = ({
     // Escape early if the language and region match exactly
     if (appLocales.includes(formattedUserLocale)) return true
 
-    const { isAvailable, appLocale } = isLanguageAvailable({
+    const { isAvailable, appLocale } = getAvailableLanguage({
       userLocale: formattedUserLocale,
       appLocales,
       options
@@ -38,8 +37,7 @@ export const availableLocales = ({
   })
 
   return matchedLocales.map((matchedLocale, index) => {
-    if (matchesToRename.length === 0) return matchedLocale
-    const { appLocale } = matchesToRename[index]
-    return appLocale
+    if (!matchesToRename || matchesToRename.length === 0) return matchedLocale
+    return matchesToRename[index].appLocale
   })
 }

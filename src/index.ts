@@ -1,5 +1,6 @@
 export * from './availableLocales.js'
+export * from './getAvailableLanguage.js'
+export * from './getUserLocales.js'
 export * from './isLocaleSupported.js'
 export * from './mergeUserLocales.js'
 export * from './preferredLocale.js'
-export * from './userLocales.js'

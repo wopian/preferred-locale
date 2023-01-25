@@ -1,4 +1,4 @@
-import { PreferredLocaleOptions } from './index.js'
+import { isLocaleSupported, PreferredLocaleOptions } from './index.js'
 
 export const mergeUserLocales = (
   locales: string[],
@@ -12,7 +12,13 @@ export const mergeUserLocales = (
 
     if (options.languageOnly) return components[0]
 
-    const maximised = new Intl.Locale(locale).maximize()
+    const maximised = isLocaleSupported()
+      ? new Intl.Locale(locale).maximize()
+      : {
+          language: components[0],
+          script: components.length === 3 ? components[1] : undefined,
+          region: components.length === 3 ? components[2] : components[1]
+        }
 
     const { language, script } = maximised
     let { region } = maximised

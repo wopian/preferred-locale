@@ -1,19 +1,19 @@
 import { isLocaleSupported, PreferredLocaleOptions } from './index.js'
 
-export interface IsLanguageAvailableProperties {
+export interface GetAvailableLanguageProperties {
   userLocale: string
   appLocales: string[]
   options?: PreferredLocaleOptions
 }
 
-export const isLanguageAvailable = ({
+export const getAvailableLanguage = ({
   userLocale,
   appLocales,
   options = {}
-}: IsLanguageAvailableProperties) => {
+}: GetAvailableLanguageProperties) => {
   if (!options?.languageOnly) options.languageOnly = false
 
-  let newAppLocale = ''
+  let newAppLocale = userLocale
 
   const isAvailable = appLocales.some(appLocale => {
     // Backwards compatibility for older browsers (Don't return regionless locales unless language only)
@@ -22,10 +22,7 @@ export const isLanguageAvailable = ({
       !options.languageOnly &&
       userLocale.split('-')[1] === undefined
     ) {
-      return {
-        isAvailable: false,
-        appLocale
-      }
+      return false
     }
 
     // Strip the region code from both locales (en-eg -> en)

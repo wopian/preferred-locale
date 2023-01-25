@@ -1,4 +1,4 @@
-import { availableLocales, mergeUserLocales, userLocales } from './index.js'
+import { availableLocales, getUserLocales, mergeUserLocales } from './index.js'
 
 export interface PreferredLocaleOptions {
   regionLowerCase?: boolean
@@ -16,11 +16,16 @@ export const preferredLocale = ({
   appLocales,
   options = {}
 }: PreferredLocaleProperties) => {
-  if (!options.regionLowerCase) options.regionLowerCase = true
+  if (!options.regionLowerCase) options.regionLowerCase = false
   if (!options.languageOnly) options.languageOnly = false
 
+  const userLocales = getUserLocales(options)
+  const mergedUserLocales = mergeUserLocales(
+    [...userLocales, fallback],
+    options
+  )
   const matchedLocales = availableLocales({
-    userLocales: mergeUserLocales([...userLocales(), fallback], options),
+    userLocales: mergedUserLocales,
     appLocales,
     options
   })

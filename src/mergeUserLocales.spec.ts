@@ -34,3 +34,21 @@ test('returns region code lowercased if regionLowerCase option is true', t => {
 test('returns language only if an invalid or unknown language-only locale is given', t => {
   t.deepEqual(mergeUserLocales(['xx']), ['xx'])
 })
+
+test('returns language, script and region when Intl.Locale is not supported', t => {
+  const storedIntl = Intl
+  // @ts-expect-error - We are testing environment without Intl namespace
+  // eslint-disable-next-line no-global-assign
+  Intl = undefined
+
+  t.deepEqual(mergeUserLocales(['en-US', 'en-GB', 'en', 'az-Cyrl-AZ']), [
+    'en-US',
+    'en-GB',
+    'en',
+    'az-Cyrl-AZ'
+  ])
+
+  // @ts-expect-error - we are restoring the Intl namespace
+  // eslint-disable-next-line no-global-assign
+  Intl = storedIntl
+})

@@ -1,6 +1,6 @@
 import test from 'ava'
 
-import { availableLocales } from './availableLocales.js'
+import { availableLocales } from './index.js'
 
 test('returns an empty array if no locales are available', t => {
   t.deepEqual(
@@ -29,7 +29,7 @@ test('returns locales if one or more matches', t => {
   )
 })
 
-test.only('returns canonical locale if user has language but not region', t => {
+test('returns canonical locale if user has language but not region', t => {
   t.deepEqual(
     availableLocales({
       userLocales: ['es-MX'],
