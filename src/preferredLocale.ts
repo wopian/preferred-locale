@@ -7,20 +7,25 @@ export interface PreferredLocaleOptions {
 
 export interface PreferredLocaleProperties {
   fallback: string
-  locales: string[]
+  appLocales: string[]
   options?: PreferredLocaleOptions
 }
 
 export const preferredLocale = ({
   fallback,
-  locales,
+  appLocales,
   options = {}
 }: PreferredLocaleProperties) => {
   if (!options.regionLowerCase) options.regionLowerCase = true
   if (!options.languageOnly) options.languageOnly = false
 
-  const unifiedLocales = mergeUserLocales([...userLocales(), fallback])
-  const availableLocale = availableLocales(locales, unifiedLocales)[0]
+  const matchedLocales = availableLocales({
+    userLocales: mergeUserLocales([...userLocales(), fallback], options),
+    appLocales,
+    options
+  })
 
-  return availableLocale.locale || fallback
+  console.log(matchedLocales)
+
+  return matchedLocales[0] || fallback
 }

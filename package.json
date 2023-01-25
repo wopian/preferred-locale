@@ -26,7 +26,7 @@
     "lint": "eslint . --ext .js,.cjs,.mjs,.ts,.cts,.mts --fix --ignore-path .gitignore",
     "lint:ci": "eslint . --ext .js,.cjs,.mjs,.ts,.cts,.mts --ignore-path .gitignore",
     "test": "ava",
-    "coverage": "c8 --all --src=dist --skip-full ava",
+    "coverage": "c8 ava",
     "document": "typedoc src/index.ts"
   },
   "devDependencies": {
@@ -37,7 +37,6 @@
     "@semantic-release/github": "~8.0.7",
     "@semantic-release/npm": "~8.0.1",
     "@semantic-release/release-notes-generator": "~10.0.3",
-    "@size-limit/preset-small-lib": "~7.0.0",
     "@types/node": "~18.11.18",
     "@typescript-eslint/eslint-plugin": "~5.48.1",
     "@typescript-eslint/parser": "~5.48.1",
@@ -51,49 +50,37 @@
     "eslint-plugin-unicorn": "~45.0.2",
     "prettier": "~2.8.3",
     "semantic-release": "~20.0.2",
-    "size-limit": "~7.0.0",
-    "ts-node": "~10.9.1",
+    "tsx": "~3.12.2",
     "typedoc": "~0.23.24",
     "typescript": "~4.9.4"
   },
-  "dependencies": {
-    "axios": "1.2.3",
-    "date-fns": "2.29.3",
-    "discord.js": "14.7.1",
-    "dotenv": "16.0.3",
-    "fastest-levenshtein": "~1.0.16",
-    "knex": "^2.4.1",
-    "mysql2": "^3.0.1",
-    "pbkdf2": "^3.1.2"
-  },
   "ava": {
     "utilizeParallelBuilds": true,
-    "typescript": {
-      "compile": "tsc",
-      "rewritePaths": {
-        "src/": "dist/"
-      }
-    }
+    "extensions": {
+      "ts": "module"
+    },
+    "nodeArguments": [
+      "--loader",
+      "tsx"
+    ]
+  },
+  "c8": {
+    "all": true,
+    "skipFull": true,
+    "src": [
+      "dist"
+    ],
+    "reporter": [
+      "lcov",
+      "text",
+      "text-summary"
+    ]
   },
   "renovate": {
     "extends": [
       "local>wopian/renovate-config"
     ]
   },
-  "size-limit": [
-    {
-      "path": "./lib/index.js",
-      "limit": "1 kb"
-    },
-    {
-      "path": "./lib/index.mjs",
-      "limit": "1 kb"
-    },
-    {
-      "path": "./lib/index.browser.js",
-      "limit": "1 kb"
-    }
-  ],
   "keywords": [
     "language",
     "language-detection",

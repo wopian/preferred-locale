@@ -1,40 +1,35 @@
 import { PreferredLocaleOptions } from './index.js'
 
-export interface MergedUserLocale {
-  locale: string
-  priority: number
-}
-
 export const mergeUserLocales = (
   locales: string[],
   options: PreferredLocaleOptions = {}
-): MergedUserLocale[] => {
-  if (!options?.regionLowerCase) options.regionLowerCase = true
+): string[] => {
+  if (!options?.regionLowerCase) options.regionLowerCase = false
   if (!options?.languageOnly) options.languageOnly = false
 
-  const prioritisedLocales = locales.map((locale, priority) => {
-    if (options.languageOnly) {
-      return {
-        locale: locale.split('-')[0],
-        priority
-      }
-    }
+  const prioritisedLocales = locales.map(locale => {
+    const components = locale.split('-')
+
+    if (options.languageOnly) return components[0]
 
     const maximised = new Intl.Locale(locale).maximize()
 
-    if (options.regionLowerCase && maximised.region) {
-      return {
-        locale: `${maximised.language}-${maximised.region.toLowerCase()}`,
-        priority
-      }
+    const { language, script } = maximised
+    let { region } = maximised
+
+    if (options.regionLowerCase && region) {
+      region = region.toLowerCase()
     }
 
-    return {
-      locale: `${maximised.language}-${maximised.region}`,
-      priority
+    // e.g app supports az-Cyrl-AZ for Cyrllic script and az-AZ for Latin script
+    if (components.length > 2) {
+      return `${language}-${script}-${region}`
+    } else if (region) {
+      return `${language}-${region}`
+    } else {
+      return language
     }
   })
-  return prioritisedLocales.filter(
-    (locale, index) => prioritisedLocales.indexOf(locale) === index
-  )
+
+  return [...new Set(prioritisedLocales)]
 }

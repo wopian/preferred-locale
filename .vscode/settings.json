@@ -3,5 +3,6 @@
   "search.exclude": {
     "**/.yarn": true,
     "**/.pnp.*": true
-  }
+  },
+  "markiscodecoverage.searchCriteria": "coverage/lcov.info"
 }

@@ -33,3 +33,25 @@ test('returns an array with the browser locale if Intl is available', t => {
   // eslint-disable-next-line no-global-assign
   Intl = storedIntl
 })
+
+test('returns a locale if only window.navigator is available', t => {
+  const storedIntl = Intl
+  const storedWindow = global.window
+  // @ts-expect-error - we are testing the case where Intl is not available
+  // eslint-disable-next-line no-global-assign
+  Intl = undefined
+
+  global.window = {
+    // @ts-expect-error - we are testing the case window.navigator is available
+    navigator: {
+      languages: ['xx-XA']
+    }
+  }
+
+  t.deepEqual(userLocales(), ['xx-XA'])
+
+  // @ts-expect-error - we are restoring the Intl namespace
+  // eslint-disable-next-line no-global-assign
+  Intl = storedIntl
+  global.window = storedWindow
+})

@@ -3,36 +3,38 @@ import test from 'ava'
 import { availableLocales } from './availableLocales.js'
 
 test('returns an empty array if no locales are available', t => {
-  t.deepEqual(availableLocales(['xx-XX'], []), [])
+  t.deepEqual(
+    availableLocales({
+      userLocales: [],
+      appLocales: ['xx-XX']
+    }),
+    []
+  )
 })
 
 test('returns a locale if one matches', t => {
-  t.deepEqual(availableLocales(['xx-XX'], [{ locale: 'xx-XX', priority: 0 }]), [
-    {
-      locale: 'xx-XX',
-      priority: 0
-    }
-  ])
+  t.deepEqual(
+    availableLocales({ userLocales: ['xx-XX'], appLocales: ['xx-XX'] }),
+    ['xx-XX']
+  )
 })
 
 test('returns locales if one or more matches', t => {
   t.deepEqual(
-    availableLocales(
-      ['xx-XX', 'en-GB', 'en-US'],
-      [
-        { locale: 'en-GB', priority: 0 },
-        { locale: 'en-US', priority: 1 }
-      ]
-    ),
-    [
-      {
-        locale: 'en-GB',
-        priority: 0
-      },
-      {
-        locale: 'en-US',
-        priority: 1
-      }
-    ]
+    availableLocales({
+      userLocales: ['en-GB', 'en-US'],
+      appLocales: ['xx-XX', 'en-GB', 'en-US']
+    }),
+    ['en-GB', 'en-US']
+  )
+})
+
+test('returns canonical locale if user has language but not region', t => {
+  t.deepEqual(
+    availableLocales({
+      userLocales: ['es-MX'],
+      appLocales: ['es-ES']
+    }),
+    ['es-ES']
   )
 })
