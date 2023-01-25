@@ -1,16 +1,25 @@
 import { isLocaleSupported, PreferredLocaleOptions } from './index.js'
 
-export interface GetAvailableLanguageProperties {
-  userLocale: string
-  appLocales: string[]
-  options?: PreferredLocaleOptions
-}
-
-export const getAvailableLanguage = ({
-  userLocale,
-  appLocales,
-  options = {}
-}: GetAvailableLanguageProperties) => {
+/**
+ * Checks if the user's locale matches the same language with a different region translated by the app
+ * @param userLocale The user locale tested against
+ * @param appLocales The locales translated by the app
+ * @param [options] Options for the function
+ * @returns The user's locale if it matches the app's locale, the app's locale if the languages match but region is or false if no matches
+ * @example
+ * import { getAvailableLanguage } from 'preferred-locale'
+ *
+ * getAvailableLanguage('en-US', ['en-US', 'en-GB']) // { isAvailable: true, appLocale: 'en-US' }
+ *
+ * getAvailableLanguage('en-GB', ['en-US']) // { isAvailable: true, appLocale: 'en-US' }
+ *
+ * getAvailableLanguage('es-ES', ['en-US']) // { isAvailable: false, appLocale: 'en-ES' }
+ */
+export const getAvailableLanguage = (
+  userLocale: string,
+  appLocales: string[],
+  options: PreferredLocaleOptions = {}
+) => {
   if (!options?.languageOnly) options.languageOnly = false
 
   let newAppLocale = userLocale

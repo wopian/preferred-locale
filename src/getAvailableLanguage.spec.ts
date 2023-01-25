@@ -3,23 +3,17 @@ import test from 'ava'
 import { getAvailableLanguage } from './index.js'
 
 test('marks canonical locale as available when no region is provided', t => {
-  t.deepEqual(
-    getAvailableLanguage({
-      userLocale: 'en',
-      appLocales: ['en-US']
-    }),
-    { isAvailable: true, appLocale: 'en-US' }
-  )
+  t.deepEqual(getAvailableLanguage('en', ['en-US']), {
+    isAvailable: true,
+    appLocale: 'en-US'
+  })
 })
 
 test('marks canonical locale as available when a different region is provided', t => {
-  t.deepEqual(
-    getAvailableLanguage({
-      userLocale: 'es-MX',
-      appLocales: ['es-ES']
-    }),
-    { isAvailable: true, appLocale: 'es-ES' }
-  )
+  t.deepEqual(getAvailableLanguage('es-MX', ['es-ES']), {
+    isAvailable: true,
+    appLocale: 'es-ES'
+  })
 })
 
 test('returns language when languageOnly option is true', t => {
@@ -29,12 +23,8 @@ test('returns language when languageOnly option is true', t => {
   Intl = undefined
 
   t.deepEqual(
-    getAvailableLanguage({
-      userLocale: 'en',
-      appLocales: ['en'],
-      options: {
-        languageOnly: true
-      }
+    getAvailableLanguage('en', ['en'], {
+      languageOnly: true
     }),
     { isAvailable: true, appLocale: 'en' }
   )
@@ -50,13 +40,10 @@ test('returns language only when user locale provides a region to an app with re
   // eslint-disable-next-line no-global-assign
   Intl = undefined
 
-  t.deepEqual(
-    getAvailableLanguage({
-      userLocale: 'en-GB',
-      appLocales: ['en']
-    }),
-    { isAvailable: true, appLocale: 'en' }
-  )
+  t.deepEqual(getAvailableLanguage('en-GB', ['en']), {
+    isAvailable: true,
+    appLocale: 'en'
+  })
 
   // @ts-expect-error - We're restoring the Intl namespace
   // eslint-disable-next-line no-global-assign
@@ -69,15 +56,33 @@ test('exits early if Intl.Locale is not supported, option is not language only a
   // eslint-disable-next-line no-global-assign
   Intl = undefined
 
-  t.deepEqual(
-    getAvailableLanguage({
-      userLocale: 'en',
-      appLocales: ['en']
-    }),
-    { isAvailable: false, appLocale: 'en' }
-  )
+  t.deepEqual(getAvailableLanguage('en', ['en']), {
+    isAvailable: false,
+    appLocale: 'en'
+  })
 
   // @ts-expect-error - We're restoring the Intl namespace
   // eslint-disable-next-line no-global-assign
   Intl = storedIntl
+})
+
+test('example 1 returns correct response', t => {
+  t.deepEqual(getAvailableLanguage('en-US', ['en-US', 'en-GB']), {
+    isAvailable: true,
+    appLocale: 'en-US'
+  })
+})
+
+test('example 2 returns correct response', t => {
+  t.deepEqual(getAvailableLanguage('en-GB', ['en-US']), {
+    isAvailable: true,
+    appLocale: 'en-US'
+  })
+})
+
+test('example 3 returns correct response', t => {
+  t.deepEqual(getAvailableLanguage('es-ES', ['en-US']), {
+    isAvailable: false,
+    appLocale: 'es-ES'
+  })
 })

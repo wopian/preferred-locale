@@ -52,3 +52,28 @@ test('returns language, script and region when Intl.Locale is not supported', t 
   // eslint-disable-next-line no-global-assign
   Intl = storedIntl
 })
+
+test('example 1 returns correct response', t => {
+  t.deepEqual(mergeUserLocales(['en-US', 'en-US', 'en', 'az-Cyrl-AZ']), [
+    'en-US',
+    'az-Cyrl-AZ'
+  ])
+})
+
+test('example 2 returns correct response', t => {
+  t.deepEqual(
+    mergeUserLocales(['en-US', 'en-US', 'en', 'az-Cyrl-AZ'], {
+      regionLowerCase: true
+    }),
+    ['en-us', 'az-Cyrl-az']
+  )
+})
+
+test('example 3 returns correct response', t => {
+  t.deepEqual(
+    mergeUserLocales(['en-US', 'en-US', 'en', 'az-Cyrl-AZ'], {
+      languageOnly: true
+    }),
+    ['en', 'az']
+  )
+})

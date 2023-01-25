@@ -1,5 +1,20 @@
 import { isLocaleSupported, PreferredLocaleOptions } from './index.js'
 
+/**
+ * Merge duplicate locales, prioritised by insertion order
+ *
+ * @param locales - An array of locales
+ * @param [options] - Options for the function
+ * @returns An array of deduplicated locales in order of preference
+ * @example
+ * import { mergeUserLocales } from 'preferred-locale'
+ *
+ * mergeUserLocales(['en-US', 'en-US', 'en', 'az-Cyrl-AZ']) // ['en-US', 'az-Cyrl-AZ']
+ *
+ * mergeUserLocales(['en-US', 'en-US', 'en', 'az-Cyrl-AZ'], { regionLowerCase: true }) // ['en-us', 'az-Cyrl-az']
+ *
+ * mergeUserLocales(['en-US', 'en-US', 'en', 'az-Cyrl-AZ'], { languageOnly: true }) // ['en', 'az']
+ */
 export const mergeUserLocales = (
   locales: string[],
   options: PreferredLocaleOptions = {}

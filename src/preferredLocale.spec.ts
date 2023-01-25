@@ -3,13 +3,7 @@ import test from 'ava'
 import { preferredLocale } from './index.js'
 
 test('returns the fallback if the user locales do not match supported locales', t => {
-  t.is(
-    preferredLocale({
-      fallback: 'ja-JP',
-      appLocales: ['ja-JP']
-    }),
-    'ja-JP'
-  )
+  t.is(preferredLocale('ja-JP', ['ja-JP']), 'ja-JP')
 })
 
 test('returns the user locale if it matches a supported locale', t => {
@@ -26,13 +20,7 @@ test('returns the user locale if it matches a supported locale', t => {
     }
   }
 
-  t.is(
-    preferredLocale({
-      fallback: 'ja-JP',
-      appLocales: ['ja-JP', 'en-US']
-    }),
-    'en-US'
-  )
+  t.is(preferredLocale('ja-JP', ['ja-JP', 'en-US']), 'en-US')
 
   // @ts-expect-error - we are restoring the Intl namespace
   // eslint-disable-next-line no-global-assign
@@ -55,12 +43,8 @@ test('returns the user locale with lowercase region if it matches a supported lo
   }
 
   t.is(
-    preferredLocale({
-      fallback: 'ja-jp',
-      appLocales: ['ja-jp', 'en-us'],
-      options: {
-        regionLowerCase: true
-      }
+    preferredLocale('ja-jp', ['ja-jp', 'en-us'], {
+      regionLowerCase: true
     }),
     'en-us'
   )
@@ -73,12 +57,8 @@ test('returns the user locale with lowercase region if it matches a supported lo
 
 test('returns the fallback if the user locales do not match supported locales with language only', t => {
   t.is(
-    preferredLocale({
-      fallback: 'jp',
-      appLocales: ['jp'],
-      options: {
-        languageOnly: true
-      }
+    preferredLocale('jp', ['jp'], {
+      languageOnly: true
     }),
     'jp'
   )
@@ -86,23 +66,38 @@ test('returns the fallback if the user locales do not match supported locales wi
 
 test('returns the user locale if it matches a supported locale with language only', t => {
   t.is(
-    preferredLocale({
-      fallback: 'jp',
-      appLocales: ['jp', 'en'],
-      options: {
-        languageOnly: true
-      }
+    preferredLocale('jp', ['jp', 'en'], {
+      languageOnly: true
     }),
     'en'
   )
 })
 
 test('returns fallback if no app locales provided', t => {
+  t.is(preferredLocale('jp', []), 'jp')
+})
+
+test('example 1 returns correct response', t => {
   t.is(
-    preferredLocale({
-      fallback: 'jp',
-      appLocales: []
+    preferredLocale('en-US', ['en-US', 'fr-FR', 'de-DE', 'az-Cyrl-AZ']),
+    'en-US'
+  )
+})
+
+test('example 2 returns correct response', t => {
+  t.is(
+    preferredLocale('en-US', ['en-US', 'fr-FR', 'de-DE', 'az-Cyrl-AZ'], {
+      regionLowerCase: true
     }),
-    'jp'
+    'en-us'
+  )
+})
+
+test('example 3 returns correct response', t => {
+  t.is(
+    preferredLocale('en', ['en', 'fr', 'de', 'az'], {
+      languageOnly: true
+    }),
+    'en'
   )
 })
