@@ -109,8 +109,9 @@ jobs:
 
       - name: Build Package
         run: yarn build
-#      - name: Create Release
-#        if: success() && github.ref == 'refs/heads/develop'
-#        run: yarn semantic-release
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: Create Release
+        if: success() && github.ref == 'refs/heads/develop'
+        run: yarn semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
