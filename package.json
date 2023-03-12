@@ -30,7 +30,7 @@
     "document": "typedoc src/index.ts --name preferred-locale --includeVersion --hideGenerator --searchInComments --plugin @mxssfd/typedoc-theme --theme my-theme --entryPointStrategy expand"
   },
   "devDependencies": {
-    "@ava/typescript": "~3.0.1",
+    "@ava/typescript": "~4.0.0",
     "@mxssfd/typedoc-theme": "~1.0.3",
     "@rushstack/eslint-patch": "~1.2.0",
     "@semantic-release/changelog": "~6.0.2",
