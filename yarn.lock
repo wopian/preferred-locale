@@ -352,12 +352,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mxssfd/typedoc-theme@npm:~1.0.3":
-  version: 1.0.6
-  resolution: "@mxssfd/typedoc-theme@npm:1.0.6"
+"@mxssfd/typedoc-theme@npm:~1.1.0":
+  version: 1.1.1
+  resolution: "@mxssfd/typedoc-theme@npm:1.1.1"
   peerDependencies:
-    typedoc: ^0.23.21
-  checksum: 8f8e6c7ec59c43eca4ab494b75caa16a0337915d9f42a187936fbc9faedba1008f074f97950b5076883abf8c3ad02baa090c1a133cb48a353d3cc0d7ec408163
+    typedoc: ^0.24.1
+  checksum: 6f42f8f6b778f4c2c5be144c690a838028ae5f380479046030cb968882a762970696e10d5a712c2d70a3338081628ae4918f5f3d5802ffbc4f2218ee626c23cb
   languageName: node
   linkType: hard
 
@@ -5743,7 +5743,7 @@ __metadata:
   resolution: "preferred-locale@workspace:."
   dependencies:
     "@ava/typescript": ~4.0.0
-    "@mxssfd/typedoc-theme": ~1.0.3
+    "@mxssfd/typedoc-theme": ~1.1.0
     "@rushstack/eslint-patch": ~1.2.0
     "@semantic-release/changelog": ~6.0.2
     "@semantic-release/commit-analyzer": ~9.0.2
