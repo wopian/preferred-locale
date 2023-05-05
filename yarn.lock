@@ -928,10 +928,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:~18.16.0":
-  version: 18.16.3
-  resolution: "@types/node@npm:18.16.3"
-  checksum: 816b39d45b05ebdc6f362b630970df3f6d82f71d418a2555353522f4eeeb078fa201de5299f02c09a09faa975e43b2745fe19c263d44069f87ddf37d6c37b717
+"@types/node@npm:~20.0.0":
+  version: 20.0.0
+  resolution: "@types/node@npm:20.0.0"
+  checksum: 7dadc41081eee634fd0b19e46dfb0a74f8296ee562533118f7c2f2b54dcaba7124961d506db425fff74d8e8288610b93939cd06fa723f053c72b1a7e87aa4ddc
   languageName: node
   linkType: hard
 
@@ -5812,7 +5812,7 @@ __metadata:
     "@semantic-release/github": ~8.0.7
     "@semantic-release/npm": ~10.0.0
     "@semantic-release/release-notes-generator": ~11.0.0
-    "@types/node": ~18.16.0
+    "@types/node": ~20.0.0
     "@typescript-eslint/eslint-plugin": ~5.59.0
     "@typescript-eslint/parser": ~5.59.0
     ava: ~5.2.0
