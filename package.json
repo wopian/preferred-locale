@@ -38,7 +38,7 @@
     "@semantic-release/github": "~9.0.0",
     "@semantic-release/npm": "~10.0.0",
     "@semantic-release/release-notes-generator": "~11.0.0",
-    "@types/node": "~20.4.0",
+    "@types/node": "~20.5.0",
     "@typescript-eslint/eslint-plugin": "~5.62.0",
     "@typescript-eslint/parser": "~5.62.0",
     "ava": "~5.3.0",
