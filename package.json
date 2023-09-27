@@ -51,7 +51,7 @@
     "eslint-plugin-unicorn": "~48.0.0",
     "prettier": "~3.0.0",
     "semantic-release": "~22.0.0",
-    "tsx": "~3.12.2",
+    "tsx": "~3.13.0",
     "typedoc": "~0.25.0",
     "typescript": "~5.2.0"
   },
