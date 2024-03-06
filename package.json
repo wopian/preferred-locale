@@ -53,7 +53,7 @@
     "semantic-release": "~22.0.0",
     "tsx": "~4.7.0",
     "typedoc": "~0.25.0",
-    "typescript": "~5.3.0"
+    "typescript": "~5.4.0"
   },
   "ava": {
     "utilizeParallelBuilds": true,
