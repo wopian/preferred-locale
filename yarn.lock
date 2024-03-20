@@ -770,10 +770,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rushstack/eslint-patch@npm:~1.6.0":
-  version: 1.6.1
-  resolution: "@rushstack/eslint-patch@npm:1.6.1"
-  checksum: 10c0/194ffb605cde00c567fe7a5025e221433a61d871d366a9558525b867f073d2d3ddb4d6bd44cf8f05edabfb37a0b99ce128230e0a367d7af2c3b1db90d02b873f
+"@rushstack/eslint-patch@npm:~1.8.0":
+  version: 1.8.0
+  resolution: "@rushstack/eslint-patch@npm:1.8.0"
+  checksum: 10c0/b8cb64176fe6f0778fccb8294f98acd325625cf75968cf3537c4d51b5d9b7dc62e3cbb82165aa473830555070ff6cc0d01ca64da3d734a5d0ce1bd90b5f24d7e
   languageName: node
   linkType: hard
 
@@ -5735,7 +5735,7 @@ __metadata:
   dependencies:
     "@ava/typescript": "npm:~4.1.0"
     "@mxssfd/typedoc-theme": "npm:~1.1.0"
-    "@rushstack/eslint-patch": "npm:~1.6.0"
+    "@rushstack/eslint-patch": "npm:~1.8.0"
     "@semantic-release/changelog": "npm:~6.0.2"
     "@semantic-release/commit-analyzer": "npm:~11.1.0"
     "@semantic-release/github": "npm:~9.2.0"
