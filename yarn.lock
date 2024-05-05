@@ -5,13 +5,13 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"@ava/typescript@npm:~4.1.0":
-  version: 4.1.0
-  resolution: "@ava/typescript@npm:4.1.0"
+"@ava/typescript@npm:~5.0.0":
+  version: 5.0.0
+  resolution: "@ava/typescript@npm:5.0.0"
   dependencies:
     escape-string-regexp: "npm:^5.0.0"
-    execa: "npm:^7.1.1"
-  checksum: 10c0/00f32d5b1f66285b39997927691e5973d09412d9ae4da1b265b7f8007a6226a7e3448ad23a29ab0fe435eceb8c11bb4c401be1edb46557d99c5f4816ba7b9f37
+    execa: "npm:^8.0.1"
+  checksum: 10c0/4f0f9fbcf34f632a95d5565d2c0f7b397873cdc9b55288c54bc7d1dde58fbf600beaa470639e5367aceb99841efa3d4b8c0b5b4bf4778fe8fe5f7e926e4a3fad
   languageName: node
   linkType: hard
 
@@ -3121,24 +3121,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"execa@npm:^7.1.1":
-  version: 7.2.0
-  resolution: "execa@npm:7.2.0"
-  dependencies:
-    cross-spawn: "npm:^7.0.3"
-    get-stream: "npm:^6.0.1"
-    human-signals: "npm:^4.3.0"
-    is-stream: "npm:^3.0.0"
-    merge-stream: "npm:^2.0.0"
-    npm-run-path: "npm:^5.1.0"
-    onetime: "npm:^6.0.0"
-    signal-exit: "npm:^3.0.7"
-    strip-final-newline: "npm:^3.0.0"
-  checksum: 10c0/098cd6a1bc26d509e5402c43f4971736450b84d058391820c6f237aeec6436963e006fd8423c9722f148c53da86aa50045929c7278b5522197dff802d10f9885
-  languageName: node
-  linkType: hard
-
-"execa@npm:^8.0.0":
+"execa@npm:^8.0.0, execa@npm:^8.0.1":
   version: 8.0.1
   resolution: "execa@npm:8.0.1"
   dependencies:
@@ -3503,7 +3486,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"get-stream@npm:^6.0.0, get-stream@npm:^6.0.1":
+"get-stream@npm:^6.0.0":
   version: 6.0.1
   resolution: "get-stream@npm:6.0.1"
   checksum: 10c0/49825d57d3fd6964228e6200a58169464b8e8970489b3acdc24906c782fb7f01f9f56f8e6653c4a50713771d6658f7cfe051e5eb8c12e334138c9c918b296341
@@ -3839,13 +3822,6 @@ __metadata:
     agent-base: "npm:^7.0.2"
     debug: "npm:4"
   checksum: 10c0/bc4f7c38da32a5fc622450b6cb49a24ff596f9bd48dcedb52d2da3fa1c1a80e100fb506bd59b326c012f21c863c69b275c23de1a01d0b84db396822fdf25e52b
-  languageName: node
-  linkType: hard
-
-"human-signals@npm:^4.3.0":
-  version: 4.3.1
-  resolution: "human-signals@npm:4.3.1"
-  checksum: 10c0/40498b33fe139f5cc4ef5d2f95eb1803d6318ac1b1c63eaf14eeed5484d26332c828de4a5a05676b6c83d7b9e57727c59addb4b1dea19cb8d71e83689e5b336c
   languageName: node
   linkType: hard
 
@@ -6032,7 +6008,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "preferred-locale@workspace:."
   dependencies:
-    "@ava/typescript": "npm:~4.1.0"
+    "@ava/typescript": "npm:~5.0.0"
     "@mxssfd/typedoc-theme": "npm:~1.1.0"
     "@rushstack/eslint-patch": "npm:~1.10.0"
     "@semantic-release/changelog": "npm:~6.0.2"
@@ -6675,7 +6651,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"signal-exit@npm:^3.0.0, signal-exit@npm:^3.0.7":
+"signal-exit@npm:^3.0.0":
   version: 3.0.7
   resolution: "signal-exit@npm:3.0.7"
   checksum: 10c0/25d272fa73e146048565e08f3309d5b942c1979a6f4a58a8c59d5fa299728e9c2fcd1a759ec870863b1fd38653670240cd420dad2ad9330c71f36608a6a1c912
