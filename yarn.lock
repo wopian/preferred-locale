@@ -5952,7 +5952,7 @@ __metadata:
     eslint-plugin-simple-import-sort: "npm:~10.0.0"
     eslint-plugin-unicorn: "npm:~49.0.0"
     prettier: "npm:~3.2.0"
-    semantic-release: "npm:~23.0.0"
+    semantic-release: "npm:~23.1.0"
     tsx: "npm:~4.9.0"
     typedoc: "npm:~0.25.0"
     typescript: "npm:~5.4.0"
@@ -6397,9 +6397,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semantic-release@npm:~23.0.0":
-  version: 23.0.8
-  resolution: "semantic-release@npm:23.0.8"
+"semantic-release@npm:~23.1.0":
+  version: 23.1.0
+  resolution: "semantic-release@npm:23.1.0"
   dependencies:
     "@semantic-release/commit-analyzer": "npm:^12.0.0"
     "@semantic-release/error": "npm:^4.0.0"
@@ -6432,7 +6432,7 @@ __metadata:
     yargs: "npm:^17.5.1"
   bin:
     semantic-release: bin/semantic-release.js
-  checksum: 10c0/202b84def459d60d6c5cb2542b1f509a2b67dd1fb81312b1871ae3ba4c0dfcd81fb25ea60b93b381c46682633ec4f397e4188490cbbe68ab16967044d059a0cf
+  checksum: 10c0/4396029521e9af112af8cdea7f1325e21c460c3510877601598b99a901ddf6d64c9b806ef0f4448d4fb1a1af8fb05cfdde9775a8b912a4e8a9e9fa6e7a2c3eff
   languageName: node
   linkType: hard
 
