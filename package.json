@@ -32,7 +32,7 @@
   "devDependencies": {
     "@ava/typescript": "~5.0.0",
     "@mxssfd/typedoc-theme": "~1.1.0",
-    "@rushstack/eslint-patch": "~1.10.0",
+    "@rushstack/eslint-patch": "~1.12.0",
     "@semantic-release/changelog": "~6.0.2",
     "@semantic-release/commit-analyzer": "~11.1.0",
     "@semantic-release/github": "~9.2.0",
