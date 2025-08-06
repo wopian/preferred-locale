@@ -52,7 +52,7 @@
     "prettier": "~3.4.0",
     "semantic-release": "~23.1.0",
     "tsx": "~4.19.0",
-    "typedoc": "~0.25.0",
+    "typedoc": "~0.28.0",
     "typescript": "~5.7.0"
   },
   "ava": {
